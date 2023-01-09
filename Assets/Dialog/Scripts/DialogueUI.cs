@@ -6,7 +6,8 @@ public class DialogueUI : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textLabel;
-    [SerializeField] private DialogueObject testDialogue;
+
+    public bool IsOpen { get; private set;}
 
     private ResponseHandler responseHandler;
     private TypewriterEffect typerwriterEffect;
@@ -16,11 +17,11 @@ public class DialogueUI : MonoBehaviour
         typerwriterEffect = GetComponent<TypewriterEffect>();
         responseHandler = GetComponent<ResponseHandler>();
         CloseDialogueBox();
-        ShowDialogue(testDialogue);
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)
     {
+        IsOpen = true;
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject));
     }
@@ -31,9 +32,14 @@ public class DialogueUI : MonoBehaviour
         for (int i = 0; i < dialogueObject.Dialogue.Length; i++)
         {
             string dialogue = dialogueObject.Dialogue[i];
-            yield return typerwriterEffect.Run(dialogue, textLabel);
 
+            yield return RunTypingEffect(dialogue);
+
+            textLabel.text = dialogue;
+            
             if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
+
+            yield return null; //waits one frame
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
             
         }
@@ -48,11 +54,30 @@ public class DialogueUI : MonoBehaviour
         }
     }
 
+    private IEnumerator RunTypingEffect(string dialogue)
+    {
+        typerwriterEffect.Run(dialogue, textLabel);
+
+        while (typerwriterEffect.IsRunning)
+        {
+            yield return null;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                typerwriterEffect.Stop();
+            }
+        }
+
+    } 
+
     private void CloseDialogueBox()
     {
+        IsOpen = false;
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
 
     }
+
+
 }
 

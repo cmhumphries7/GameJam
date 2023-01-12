@@ -7,27 +7,32 @@ public class PlayerLife : MonoBehaviour
 {
     [SerializeField] public float lifeForce = 100f;
     [SerializeField] public float decayRate = 5f;
-    [SerializeField] public float drainTime = 5f;
+    [SerializeField] public float drainRate = 5f;
     [SerializeField] public float drainRadius = 5f;
     private GameObject player;
-    private GameObject[] drainables;
+    private PlantSource[] drainables;
     private PlantSource plantSource;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        drainables = GameObject.FindGameObjectsWithTag("Drainable");
+        drainables = PlantSource.FindGameObjectWithTag("Drainable");
         plantSource = FindObjectOfType<PlantSource>();
+
         StartCoroutine(LifeDecay(player));
     }
 
      void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.E) && FindClosestDrainable() != null))
+        PlantSource foundPlant = FindClosestDrainable();
+        if ((Input.GetKey(KeyCode.E) && FindClosestDrainable() != null))
         {
-            FindClosestDrainable();
-            StartCoroutine(DrainLife(closest));
-        }     
-        if (Input.GetKeyUp(KeyCode.E)) StopCoroutine(DrainLife(closest));
+            Debug.Log("Entered Loop");
+            StartCoroutine(DrainLife(foundPlant));
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            StopCoroutine(DrainLife(foundPlant));
+        }
     }
 
     private IEnumerator LifeDecay(GameObject player)
@@ -40,24 +45,26 @@ public class PlayerLife : MonoBehaviour
             
         }
         yield return null;
-        Debug.Log("Finished.");
+        //Debug.Log("Finished.");
 
     }
 
-    private IEnumerator DrainLife(GameObject closest)
+    private IEnumerator DrainLife(PlantSource foundPlant)
     {
-        while (closest.plantHealth > 0f)
+        while (foundPlant.plantHealth > 0f)
         {
-
+            foundPlant.plantHealth -=- drainRate;
+            Debug.Log("Plant health is" + foundPlant.plantHealth);
+            yield return new WaitForSeconds(10);
         }
-        yield return null;
+        //yield return null;
         Debug.Log("Finished.");
     }
 
-    public GameObject FindClosestDrainable()
+    public PlantSource FindClosestDrainable()
     {
-        GameObject closest = null;
-        foreach (GameObject drainable in drainables)
+        PlantSource closest = null;
+        foreach (PlantSource drainable in drainables)
         {
             Vector2 diff = player.transform.position - drainable.transform.position;
             float distanceToDrainable = diff.magnitude;
@@ -69,5 +76,4 @@ public class PlayerLife : MonoBehaviour
         return closest;
     }
 
-   
 }

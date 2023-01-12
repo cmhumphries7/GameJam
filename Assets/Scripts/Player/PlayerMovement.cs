@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] public float speed = 0.5f;
     [SerializeField] public float jumpForce = 6f;
+     
 
 
     private float movePlayerVector;
@@ -44,32 +45,16 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
 
-
-
-        #region Old Movement Code
-     /*   if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        void Flip()
         {
-            this.transform.position += Vector3.left * this.speed * Time.deltaTime;
+            facingRight = !facingRight;
+
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
         }
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            this.transform.position += Vector3.right * this.speed * Time.deltaTime;
-        }
-
-        if (Input.GetKeyDown("space"))
-        {
-            this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
-        }*/
-        #endregion
     }
 
-    private void Flip()
-    {
-        facingRight = !facingRight;
-
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-    }
 }
+

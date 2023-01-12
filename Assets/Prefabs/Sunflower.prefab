@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4422241771222063871}
+  - component: {fileID: 2746520035398072722}
   - component: {fileID: 4422241771222063870}
-  - component: {fileID: 7247792707579005685}
   - component: {fileID: 3232115065274742582}
   m_Layer: 0
   m_Name: Sunflower
@@ -34,6 +34,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2746520035398072722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4422241771222063869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dfb8692b653224fbd6688801c4b6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drainRate: 5
+  drainRadius: 5
+  plantHealth: 50
+  drainables: []
 --- !u!212 &4422241771222063870
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86,18 +102,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7247792707579005685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4422241771222063869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41dfb8692b653224fbd6688801c4b6ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &3232115065274742582
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

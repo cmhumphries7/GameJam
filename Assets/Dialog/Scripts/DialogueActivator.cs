@@ -40,7 +40,6 @@ public class DialogueActivator : MonoBehaviour, IInteractable
             }
         }
 
-
         player.DialogueUI.ShowDialogue(dialogueObject);
     }
 }

@@ -8,12 +8,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float speed = 0.5f;
     [SerializeField] public float jumpForce = 6f;
      
-
-
     private float movePlayerVector;
     private Rigidbody2D playerRigidBody2D;
     private bool facingRight;
     private DialogueUI dialogueUI;
+    public bool movementLocked = false;
 
     void Awake()
     {
@@ -26,14 +25,23 @@ public class PlayerMovement : MonoBehaviour
     {
         if (dialogueUI != null && dialogueUI.IsOpen) return; //locks movement when dialogueUI is open
 
-        movePlayerVector = Input.GetAxis("Horizontal");
-
-        playerRigidBody2D.velocity = new Vector2(movePlayerVector * speed, playerRigidBody2D.velocity.y);
-
-        if (Input.GetKeyDown("space"))
+        if (!movementLocked)
         {
-            playerRigidBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            movePlayerVector = Input.GetAxis("Horizontal");
+
+            playerRigidBody2D.velocity = new Vector2(movePlayerVector * speed, playerRigidBody2D.velocity.y);
+
+            if (Input.GetKeyDown("space"))
+            {
+                playerRigidBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
         }
+        else
+        {
+            playerRigidBody2D.velocity = new Vector2(0, playerRigidBody2D.velocity.y);
+        }
+
+        
 
         if (movePlayerVector > 0 && !facingRight)
         {
@@ -54,6 +62,18 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = theScale;
         }
 
+    }
+
+    public void LockMovement (bool nlock)
+    {
+        if (nlock)
+        {
+            movementLocked = true;
+        }
+        else
+        {
+            movementLocked = false;
+        }
     }
 
 }

@@ -50,6 +50,7 @@ MonoBehaviour:
   drainRadius: 5
   plantHealth: 50
   drainables: []
+  playerLife: {fileID: 0}
 --- !u!212 &4422241771222063870
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -115,6 +116,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05309868, y: 0.90625}
-  m_Size: {x: 0.6875, y: 1.8125}
+  m_Offset: {x: 0.01050806, y: 0.9062495}
+  m_Size: {x: 1.9839921, y: 1.9839921}
   m_Direction: 0

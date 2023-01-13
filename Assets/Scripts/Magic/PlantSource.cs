@@ -8,34 +8,45 @@ public class PlantSource: MonoBehaviour
     [SerializeField] public float drainRadius = 5f;
     [SerializeField] public float plantHealth = 50f;
     public GameObject[] drainables;
+    public PlayerLife playerLife;
+    private LifeMagic lifeMagic;
 
     public void Start()
     {
        drainables = GameObject.FindGameObjectsWithTag("Drainable");
        Debug.Log("These are the plant source " + drainables.Length);
+       playerLife = FindObjectOfType<PlayerLife>();
+    }
+
+    public void Update()
+    {
+        if (lifeMagic != null)
+        {
+            Debug.Log("Checking for life magic");
+            if (lifeMagic.isRequestingLife && plantHealth > 0)
+            {
+                float timedDrainRate = drainRate * Time.deltaTime;
+                plantHealth = plantHealth - timedDrainRate;
+                playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
+            }
+        }
     }
 
     public GameObject[] getDrainables()
     {
         return drainables;
-
     }
 
-    public IEnumerator DrainLife(GameObject foundPlant)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        while (plantHealth > 0f && Input.GetKey(KeyCode.E))
-        {
-            plantHealth = plantHealth - drainRate;
-            Debug.Log("Plant health is" + plantHealth);
-            if (Input.GetKeyUp(KeyCode.E) )
-            {
-                StopCoroutine(DrainLife(foundPlant));
-                break;
-            }
-            yield return new WaitForSeconds(1);
-        }
-        yield return null;
-        Debug.Log("Finished.");
+        Debug.Log("Inside on trigger stay");
+
+        lifeMagic = collision.gameObject.GetComponent<LifeMagic>();
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        lifeMagic = null;
     }
 
 

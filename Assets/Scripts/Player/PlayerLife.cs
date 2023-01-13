@@ -25,17 +25,8 @@ public class PlayerLife : MonoBehaviour
 
     void Update()
     {
-        GameObject foundPlant = FindClosestDrainable();
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Entered Loop");
-            StartCoroutine(plantSource.DrainLife(foundPlant));
-        }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            StopCoroutine(plantSource.DrainLife(foundPlant));
-        }
-    }
+
+      }
 
     private IEnumerator LifeDecay(GameObject player)
     {
@@ -51,20 +42,27 @@ public class PlayerLife : MonoBehaviour
 
     }
 
-    public GameObject FindClosestDrainable()
-    {
-        GameObject closest = null;
-        foreach (GameObject drainable in drainables)
+    #region findDrainable
+    /*    public GameObject FindClosestDrainable()
         {
-            Vector2 diff = player.transform.position - drainable.transform.position;
-            float distanceToDrainable = diff.magnitude;
-            if (distanceToDrainable <= plantSource.drainRadius)
+            GameObject closest = null;
+            //Debug.Log("Entered the find closest loop");
+            for (int i = 0; i < drainables.Length; i++)
             {
-                closest = drainable;
+                //Debug.Log("Entered the for loop");
+                float drainRadius = plantSource.drainRadius;
+                Vector2 diff = player.transform.position - drainables[i].transform.position;
+                float distanceToDrainable = diff.magnitude;
+                if (distanceToDrainable <= drainRadius)
+                {
+                    closest = drainables[i];
+                    //Debug.Log("I've found the closest");
+                }
             }
-        }
-        return closest;
-    }
+            return closest;       
+        }*/
+    #endregion
+
 }
 
 

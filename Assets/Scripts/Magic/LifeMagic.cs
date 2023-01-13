@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class LifeMagic : MonoBehaviour
 {
-    
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public bool isRequestingLife = false;
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.E))
+        {
+            isRequestingLife = true;
+        }
+        else
+        {
+            isRequestingLife = false;
+        }
     }
 }

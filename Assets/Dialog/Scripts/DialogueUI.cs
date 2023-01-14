@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Playables;
 
 public class DialogueUI : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textLabel;
+    public PlayableDirector currentDirector;
 
     public bool IsOpen { get; private set;}
 
@@ -80,6 +82,11 @@ public class DialogueUI : MonoBehaviour
         IsOpen = false;
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+        if(currentDirector != null)
+        {
+            currentDirector.playableGraph.GetRootPlayable(0).SetSpeed(1d);
+            currentDirector = null;
+        }
 
     }
 

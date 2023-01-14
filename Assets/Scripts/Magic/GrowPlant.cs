@@ -14,6 +14,7 @@ public class GrowPlant : MonoBehaviour
     void Start()
     {
         playerLife = FindObjectOfType<PlayerLife>();
+        lifeMagic = FindObjectOfType<LifeMagic>();
         growables = GameObject.FindGameObjectsWithTag("Growable");
     }
 
@@ -27,7 +28,7 @@ public class GrowPlant : MonoBehaviour
     {
         if (lifeMagic != null)
         {
-            Debug.Log("Checking for life magic");
+            //Debug.Log("Checking for life magic");
             if (playerLife.lifeForce >= 20f)
             {
                 if (lifeMagic.isGrowingLife && growPlantHealth == 0f)

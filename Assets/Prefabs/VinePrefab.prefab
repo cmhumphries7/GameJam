@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6353275649657356757}
   m_Layer: 0
   m_Name: VinePrefab
-  m_TagString: Imbuable
+  m_TagString: Growable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,10 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e6be6b548100c4ca68837bebf3b125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imbueablesHealth: 0
-  imbueCost: 20
+  growPlantHealth: 0
+  growCost: 20
   playerLife: {fileID: 0}
-  imbueables: []
+  growables: []
 --- !u!50 &6353275649657356757
 Rigidbody2D:
   serializedVersion: 4

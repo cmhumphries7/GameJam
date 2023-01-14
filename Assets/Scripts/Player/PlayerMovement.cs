@@ -43,12 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
         
 
-        if (movePlayerVector > 0 && !facingRight)
+        if (movePlayerVector > 0 && facingRight)
         {
             Flip();
         }
 
-        else if (movePlayerVector < 0 && facingRight)
+        else if (movePlayerVector < 0 && !facingRight)
         {
             Flip();
         }

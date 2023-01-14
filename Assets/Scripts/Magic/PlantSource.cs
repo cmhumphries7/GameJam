@@ -24,7 +24,7 @@ public class PlantSource: MonoBehaviour
     {
         if (lifeMagic != null)
         {
-            Debug.Log("Checking for life magic");
+            //Debug.Log("Checking for life magic");
             if (lifeMagic.isRequestingLife && plantHealth > 0)
             {
                 float timedDrainRate = drainRate * Time.deltaTime;

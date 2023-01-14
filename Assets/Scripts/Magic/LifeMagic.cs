@@ -5,7 +5,7 @@ using UnityEngine;
 public class LifeMagic : MonoBehaviour
 {
     public bool isRequestingLife = false;
-    public bool isImbuingLife = false;
+    public bool isGrowingLife = false;
 
     void Update()
     {
@@ -17,14 +17,13 @@ public class LifeMagic : MonoBehaviour
         {
             isRequestingLife = false;
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKey(KeyCode.F))
         {
-            Debug.Log("Player pressed F");
-            isImbuingLife = true;
+            isGrowingLife = true;
         }
         else
         {
-            isImbuingLife = false;
+            isGrowingLife = false;
         }
     }
 }

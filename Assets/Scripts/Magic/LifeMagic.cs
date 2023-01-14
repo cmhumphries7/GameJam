@@ -5,6 +5,8 @@ using UnityEngine;
 public class LifeMagic : MonoBehaviour
 {
     public bool isRequestingLife = false;
+    public bool isImbuingLife = false;
+
     void Update()
     {
         if (Input.GetKey(KeyCode.E))
@@ -14,6 +16,14 @@ public class LifeMagic : MonoBehaviour
         else
         {
             isRequestingLife = false;
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            isImbuingLife = true;
+        }
+        else
+        {
+            isImbuingLife = false;
         }
     }
 }

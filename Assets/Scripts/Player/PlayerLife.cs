@@ -33,7 +33,7 @@ public class PlayerLife : MonoBehaviour
         while (lifeForce > 0f)
         {
             lifeForce = lifeForce - decayRate;
-            Debug.Log(lifeForce);
+            Debug.Log("Player's remaining lifeForce: " + lifeForce);
             yield return new WaitForSeconds(10);
         }
         yield return null;

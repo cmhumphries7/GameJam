@@ -11,7 +11,7 @@ public class CamFollow : MonoBehaviour
     public float maxDistance;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector2 camPos = new Vector2(0, 0);
         camPos.x = transform.position.x;

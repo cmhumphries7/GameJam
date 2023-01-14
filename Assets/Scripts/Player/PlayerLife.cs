@@ -9,6 +9,7 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] public float decayRate = 5f;
     private GameObject player;
     public PlantSource plantSource;
+    public GrowPlant growPlant;
     public GameObject[] drainables;
 
     void Start()
@@ -16,6 +17,8 @@ public class PlayerLife : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
        
         plantSource = FindObjectOfType<PlantSource>();
+
+        growPlant = FindObjectOfType<GrowPlant>();
 
         drainables = plantSource.getDrainables();
 

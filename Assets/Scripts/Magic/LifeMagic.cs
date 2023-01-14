@@ -19,6 +19,7 @@ public class LifeMagic : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
+            Debug.Log("Player pressed F");
             isImbuingLife = true;
         }
         else

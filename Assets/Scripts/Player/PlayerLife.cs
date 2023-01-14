@@ -2,17 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public class PlayerLife : MonoBehaviour
 {
     [SerializeField] public float lifeForce = 100f;
     [SerializeField] public float decayRate = 5f;
-    [SerializeField] public Light2D glowLight;
     private GameObject player;
     public PlantSource plantSource;
     public GameObject[] drainables;
-
 
     void Start()
     {
@@ -28,8 +25,8 @@ public class PlayerLife : MonoBehaviour
 
     void Update()
     {
-        glowLight.intensity = lifeForce/100f;
-    }
+
+      }
 
     private IEnumerator LifeDecay(GameObject player)
     {
@@ -38,7 +35,6 @@ public class PlayerLife : MonoBehaviour
             lifeForce = lifeForce - decayRate;
             Debug.Log(lifeForce);
             yield return new WaitForSeconds(10);
-
         }
         yield return null;
         //Debug.Log("Finished.");

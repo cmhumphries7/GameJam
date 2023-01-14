@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlantSource: MonoBehaviour
 {
     [SerializeField] public float drainRate = 5f;
     [SerializeField] public float drainRadius = 5f;
     [SerializeField] public float plantHealth = 50f;
+    [SerializeField] public Light2D glowLight;
     public GameObject[] drainables;
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
@@ -30,6 +32,8 @@ public class PlantSource: MonoBehaviour
                 playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
             }
         }
+
+        glowLight.intensity = (plantHealth * 2f) / 100f;
     }
 
     public GameObject[] getDrainables()

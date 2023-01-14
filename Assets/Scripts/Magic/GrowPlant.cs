@@ -36,7 +36,7 @@ public class GrowPlant : MonoBehaviour
                     growPlantHealth = growCost;
                     playerLife.lifeForce = playerLife.lifeForce - growCost;
                     Debug.Log("Growing health: " + growPlantHealth);
-
+                    transform.localScale = transform.localScale + new Vector3(2,0,0);
                 }
             }
         }
@@ -45,7 +45,6 @@ public class GrowPlant : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision )
     {
         lifeMagic = collision.gameObject.GetComponent<LifeMagic>();
-
     }
     
     public void OnTriggerExit2D(Collider2D collision )

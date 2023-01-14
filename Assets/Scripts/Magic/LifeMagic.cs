@@ -20,6 +20,7 @@ public class LifeMagic : MonoBehaviour
         if (Input.GetKey(KeyCode.F))
         {
             isGrowingLife = true;
+            
         }
         else
         {

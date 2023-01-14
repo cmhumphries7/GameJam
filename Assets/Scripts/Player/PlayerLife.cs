@@ -35,7 +35,6 @@ public class PlayerLife : MonoBehaviour
             lifeForce = lifeForce - decayRate;
             Debug.Log(lifeForce);
             yield return new WaitForSeconds(10);
-
         }
         yield return null;
         //Debug.Log("Finished.");

@@ -9,6 +9,7 @@ public class GrowPlant : MonoBehaviour
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
     public GameObject[] growables;
+    public Vector3 plantGrowth = new Vector3 (2,0,0);
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,7 @@ public class GrowPlant : MonoBehaviour
                     growPlantHealth = growCost;
                     playerLife.lifeForce = playerLife.lifeForce - growCost;
                     Debug.Log("Growing health: " + growPlantHealth);
-                    transform.localScale = transform.localScale + new Vector3(2,0,0);
+                    transform.localScale = transform.localScale + plantGrowth;
                 }
             }
         }

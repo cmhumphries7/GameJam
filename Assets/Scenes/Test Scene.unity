@@ -879,6 +879,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1897284d45fd38429e8bb34fb532cce, type: 3}
+--- !u!1 &887472113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4747694866668042363, guid: 0cde5280cb0df5240bf5cc2866248e08, type: 3}
+  m_PrefabInstance: {fileID: 1830613502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &890648296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,6 +2025,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WheatTemp
       objectReference: {fileID: 0}
+    - target: {fileID: 4747694866668042363, guid: 0cde5280cb0df5240bf5cc2866248e08, type: 3}
+      propertyPath: m_TagString
+      value: Growable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cde5280cb0df5240bf5cc2866248e08, type: 3}
 --- !u!4 &1830613503 stripped
@@ -2027,6 +2036,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4747694866668042341, guid: 0cde5280cb0df5240bf5cc2866248e08, type: 3}
   m_PrefabInstance: {fileID: 1830613502}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &1830613505
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887472113}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.109375, y: 0.6255212}
+  serializedVersion: 2
+  m_Radius: 0.6255212
 --- !u!1 &1893349894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2361,7 +2386,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00602144, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2372,7 +2397,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.987957, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &569652438540370721 stripped
 GameObject:
@@ -2443,6 +2468,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1830613503}
     m_Modifications:
+    - target: {fileID: 251665318, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
+      propertyPath: plantGrowth.x
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5402185086856862608, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
       propertyPath: m_Size.y
       value: 1.5449052
@@ -2455,13 +2484,29 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5402185086856862609, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402185086856862609, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5402185086856862614, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
       propertyPath: m_Name
       value: VinePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5402185086856862614, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402185086856862614, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5402185086856862615, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5402185086856862615, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
       propertyPath: m_LocalScale.x
@@ -2477,11 +2522,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5402185086856862615, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.29
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5402185086856862615, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.40999985
+      value: 0.53
       objectReference: {fileID: 0}
     - target: {fileID: 5402185086856862615, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2517,15 +2562,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6353275649657356757, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
       propertyPath: m_BodyType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6353275649657356757, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
       propertyPath: m_Simulated
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6353275649657356757, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5402185086856862608, guid: 10624f5b9e633b9438a7487494daf056, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 10624f5b9e633b9438a7487494daf056, type: 3}

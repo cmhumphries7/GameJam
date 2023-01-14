@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 583330637}
   - component: {fileID: 583330636}
   m_Layer: 0
-  m_Name: PlantLight
+  m_Name: GlowLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

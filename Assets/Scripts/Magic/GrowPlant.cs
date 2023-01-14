@@ -9,13 +9,17 @@ public class GrowPlant : MonoBehaviour
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
     public GameObject[] growables;
-    public Vector3 plantGrowth = new Vector3 (2,0,0);
+    //lerp
+    bool isScaling = false;
+    public Transform vine;
+    public Vector3 toScale = new Vector3(430.01f, .3f, 1);
+    private Coroutine growRoutine;
+    //public Vector3 plantGrowth = new Vector3 (2,0,0);
 
     // Start is called before the first frame update
     void Start()
     {
         playerLife = FindObjectOfType<PlayerLife>();
-        lifeMagic = FindObjectOfType<LifeMagic>();
         growables = GameObject.FindGameObjectsWithTag("Growable");
     }
 
@@ -24,10 +28,10 @@ public class GrowPlant : MonoBehaviour
         return growables;
     }
 
-    // Update is called once per frame
+
     public void Update()
     {
-        if (lifeMagic != null)
+        if (lifeMagic != null && growRoutine == null)
         {
             //Debug.Log("Checking for life magic");
             if (playerLife.lifeForce >= 20f)
@@ -36,8 +40,9 @@ public class GrowPlant : MonoBehaviour
                 {
                     growPlantHealth = growCost;
                     playerLife.lifeForce = playerLife.lifeForce - growCost;
-                    Debug.Log("Growing health: " + growPlantHealth);
-                    transform.localScale = transform.localScale + plantGrowth;
+                    Debug.Log("Growing health: " + growPlantHealth);                   
+                    growRoutine = StartCoroutine(scaleOverTime(vine.transform, 10f));
+                    //transform.localScale = transform.localScale + plantGrowth;
                 }
             }
         }
@@ -53,4 +58,26 @@ public class GrowPlant : MonoBehaviour
          lifeMagic = null;
 
      }
+
+    IEnumerator scaleOverTime(Transform vine, float duration)
+    {
+        if (isScaling)
+        {
+            yield break;
+        }
+        isScaling = true;
+        float counter = 0;
+        Vector3 startScalesize = vine.localScale;
+
+        while (counter < duration)
+        {
+            counter += Time.deltaTime;
+            vine.localScale = Vector3.Lerp(startScalesize, toScale, counter / duration);
+            yield return null;
+        }
+
+        isScaling = false;
+
+    }
+
 }

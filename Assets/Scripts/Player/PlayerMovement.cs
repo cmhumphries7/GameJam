@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] public float speed = 0.5f;
     [SerializeField] public float jumpForce = 6f;
-     
+
     private float movePlayerVector;
     private Rigidbody2D playerRigidBody2D;
     CapsuleCollider2D capsuleColliderPlayer;
@@ -17,8 +17,11 @@ public class PlayerMovement : MonoBehaviour
     int layerMaskGround;
     float heightTestPlayer;
 
+    private Animator anim;
+
     private void Start()
     {
+        anim = GetComponent<Animator>();
         layerMaskGround = LayerMask.GetMask("Ground");
         capsuleColliderPlayer = GetComponent<CapsuleCollider2D>();
         heightTestPlayer = capsuleColliderPlayer.bounds.extents.y + .05f;
@@ -29,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         dialogueUI = GetComponent<PlayerDialogue>().DialogueUI;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (dialogueUI != null && dialogueUI.IsOpen) return; //locks movement when dialogueUI is open
@@ -50,9 +53,26 @@ public class PlayerMovement : MonoBehaviour
             playerRigidBody2D.velocity = new Vector2(0, playerRigidBody2D.velocity.y);
         }
 
-        
+        if (movePlayerVector == 0)
+        {
+            anim.SetBool("isRunning", false);
+        }
+        else
+        {
+            anim.SetBool("isRunning", true);
+        }
 
-        if (movePlayerVector > 0 && facingRight)
+        if (movePlayerVector < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+
+        else if (movePlayerVector > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+
+       /* if (movePlayerVector > 0 && facingRight)
         {
             Flip();
         }
@@ -69,28 +89,29 @@ public class PlayerMovement : MonoBehaviour
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
-        }
+        }*/
 
     }
 
-    public void LockMovement (bool nlock)
-    {
-        if (nlock)
+        public void LockMovement(bool nlock)
         {
-            movementLocked = true;
+            if (nlock)
+            {
+                movementLocked = true;
+            }
+            else
+            {
+                movementLocked = false;
+            }
         }
-        else
-        {
-            movementLocked = false;
-        }
-    }
 
-    private bool isGrounded()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(capsuleColliderPlayer.bounds.center, Vector2.down, heightTestPlayer, layerMaskGround);
-        bool isGrounded = hit.collider != null;
-        return isGrounded;
-    }
+        bool isGrounded()
+        {
+            RaycastHit2D hit = Physics2D.Raycast(capsuleColliderPlayer.bounds.center, Vector2.down, heightTestPlayer, layerMaskGround);
+            bool isGrounded = hit.collider != null;
+            return isGrounded;
+        }
 
 }
+
 

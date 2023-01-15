@@ -45,12 +45,22 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKeyDown("space") && isGrounded())
             {
+                anim.SetTrigger("takeOff");
                 playerRigidBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+            else
+            {
+                anim.SetBool("isJumping", true);
             }
         }
         else
         {
             playerRigidBody2D.velocity = new Vector2(0, playerRigidBody2D.velocity.y);
+        }
+
+        if (isGrounded())
+        {
+            anim.SetBool("isJumping", false);
         }
 
         if (movePlayerVector == 0)
@@ -71,25 +81,6 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
-
-       /* if (movePlayerVector > 0 && facingRight)
-        {
-            Flip();
-        }
-
-        else if (movePlayerVector < 0 && !facingRight)
-        {
-            Flip();
-        }
-
-        void Flip()
-        {
-            facingRight = !facingRight;
-
-            Vector3 theScale = transform.localScale;
-            theScale.x *= -1;
-            transform.localScale = theScale;
-        }*/
 
     }
 

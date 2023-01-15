@@ -14,11 +14,9 @@ public class GrowPlant : MonoBehaviour
     public Transform vine;
     public Vector3 toScale = new Vector3(430.01f, .3f, 1);
     private Coroutine growRoutine;
-    //public Vector3 plantGrowth = new Vector3 (2,0,0);
 
-    // Start is called before the first frame update
     void Start()
-    {
+    {        
         playerLife = FindObjectOfType<PlayerLife>();
         growables = GameObject.FindGameObjectsWithTag("Growable");
     }

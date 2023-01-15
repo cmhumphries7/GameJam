@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -40,11 +41,21 @@ public class PlayerLife : MonoBehaviour
         {
             lifeForce = lifeForce - decayRate;
             Debug.Log("Player's remaining lifeForce: " + lifeForce);
+            Die();
             yield return new WaitForSeconds(10);
         }
         yield return null;
         //Debug.Log("Finished.");
 
+    }
+
+    void Die()
+    {
+        Debug.Log("life force is zero");
+        if (lifeForce <= 0 )
+        {
+            SceneManager.LoadScene("DeathScene");
+        }
     }
 
     #region findDrainable

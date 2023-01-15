@@ -47,6 +47,15 @@ public class PlayerLife : MonoBehaviour
 
     }
 
+    void Die()
+    {
+        Debug.Log("life force is zero");
+        if (lifeForce <= 0 )
+        {
+
+        }
+    }
+
     #region findDrainable
     /*    public GameObject FindClosestDrainable()
         {

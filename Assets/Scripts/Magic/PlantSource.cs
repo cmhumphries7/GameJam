@@ -30,6 +30,10 @@ public class PlantSource: MonoBehaviour
                 float timedDrainRate = drainRate * Time.deltaTime;
                 plantHealth = plantHealth - timedDrainRate;
                 playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
+                if (plantHealth < 0)
+                {
+                    plantHealth = 0;
+                }
             }
         }
 

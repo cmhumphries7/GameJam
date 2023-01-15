@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Drainable
   - Imbuable
+  - Growable
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - 6
   - Light
-  - 
+  - Ground
   - 
   - 
   - 

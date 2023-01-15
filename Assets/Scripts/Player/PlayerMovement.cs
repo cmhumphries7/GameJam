@@ -10,10 +10,19 @@ public class PlayerMovement : MonoBehaviour
      
     private float movePlayerVector;
     private Rigidbody2D playerRigidBody2D;
+    CapsuleCollider2D capsuleColliderPlayer;
     private bool facingRight;
     private DialogueUI dialogueUI;
     public bool movementLocked = false;
+    int layerMaskGround;
+    float heightTestPlayer;
 
+    private void Start()
+    {
+        layerMaskGround = LayerMask.GetMask("Ground");
+        capsuleColliderPlayer = GetComponent<CapsuleCollider2D>();
+        heightTestPlayer = capsuleColliderPlayer.bounds.extents.y + .05f;
+    }
     void Awake()
     {
         playerRigidBody2D = (Rigidbody2D)GetComponent(typeof(Rigidbody2D));
@@ -31,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
             playerRigidBody2D.velocity = new Vector2(movePlayerVector * speed, playerRigidBody2D.velocity.y);
 
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown("space") && isGrounded())
             {
                 playerRigidBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
@@ -43,12 +52,12 @@ public class PlayerMovement : MonoBehaviour
 
         
 
-        if (movePlayerVector > 0 && !facingRight)
+        if (movePlayerVector > 0 && facingRight)
         {
             Flip();
         }
 
-        else if (movePlayerVector < 0 && facingRight)
+        else if (movePlayerVector < 0 && !facingRight)
         {
             Flip();
         }
@@ -74,6 +83,13 @@ public class PlayerMovement : MonoBehaviour
         {
             movementLocked = false;
         }
+    }
+
+    private bool isGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(capsuleColliderPlayer.bounds.center, Vector2.down, heightTestPlayer, layerMaskGround);
+        bool isGrounded = hit.collider != null;
+        return isGrounded;
     }
 
 }

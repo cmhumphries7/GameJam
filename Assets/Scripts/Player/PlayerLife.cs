@@ -31,7 +31,7 @@ public class PlayerLife : MonoBehaviour
         {
             StartCoroutine(LifeDecay(player));
         }
-        Debug.Log("These are the player " + (plantSource.drainables).Length);
+        //Debug.Log("These are the player " + (plantSource.drainables).Length);
 
 }
 
@@ -47,7 +47,7 @@ void Update()
         while (lifeForce > 0f)
         {
             lifeForce = lifeForce - timedDecayRate ;
-            Debug.Log("Player's remaining lifeForce: " + lifeForce);
+            //Debug.Log("Player's remaining lifeForce: " + lifeForce);
             Die();
             yield return null;
         }

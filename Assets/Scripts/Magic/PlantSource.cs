@@ -31,17 +31,7 @@ public class PlantSource: MonoBehaviour
     {
         if (lifeMagic != null)
         {
-            //Debug.Log("Checking for life magic");
-            if (lifeMagic.isRequestingLife && plantHealth > 0)
-            {
-                float timedDrainRate = drainRate * Time.deltaTime;
-                plantHealth = plantHealth - timedDrainRate;
-                playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
-                if (plantHealth < 0)
-                {
-                    plantHealth = 0;
-                }
-            }
+            CheckForPlant();
         }
 
         glowLight.intensity = (plantHealth * 2f) / 100f;
@@ -66,6 +56,20 @@ public class PlantSource: MonoBehaviour
     public void OnTriggerExit2D(Collider2D collision)
     {
         lifeMagic = null;
+    }
+
+    public void CheckForPlant()
+    {
+        if (lifeMagic.isRequestingLife && plantHealth > 0)
+        {
+            float timedDrainRate = drainRate * Time.deltaTime;
+            plantHealth = plantHealth - timedDrainRate;
+            playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
+            if (plantHealth < 0)
+            {
+                plantHealth = 0;
+            }
+        }
     }
 
 }

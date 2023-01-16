@@ -20,11 +20,18 @@ public class GrowPlant : MonoBehaviour
     private Coroutine growRoutine;
     [SerializeField] private GameObject tutorialPrompt;
 
+    private GameObject player;
+
+
     void Start()
-    {        
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         playerLife = FindObjectOfType<PlayerLife>();
         growables = GameObject.FindGameObjectsWithTag("Growable");
         startScalesize = vine.localScale;
+
+        glowLight = player.GetComponentInChildren<Light2D>();
     }
 
     public GameObject[] getGrowables()

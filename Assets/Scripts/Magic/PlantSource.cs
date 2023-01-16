@@ -101,13 +101,21 @@ public class PlantSource: MonoBehaviour
     {
         if (lifeMagic.isRequestingLife && cloudHealth > 50 && nextPhase)
         {
-            //Debug.Log("This is a cloud");
+            nextPhase = false;
             float timedDrainRate = cloudDrainRate * Time.deltaTime;
             cloudHealth = cloudHealth - timedDrainRate;
             playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
-            if (cloudHealth < 50)
+            if (cloudHealth <= 50)
             {
-                cloudHealth = 50;
+                phaseTimer += Time.deltaTime;
+                if (phaseTimer < timeToNextPhase && !nextPhase)
+                {
+                    lifeMagic.LockMagic(true);
+                }
+                else
+                {
+                    ResetTimer();
+                }
             }
         }
     }

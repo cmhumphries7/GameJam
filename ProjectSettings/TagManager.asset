@@ -20,7 +20,7 @@ TagManager:
   - PlantMask
   - Cloud
   - Death Layer
-  - 
+  - Foreground
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: Foreground_Interactable
     uniqueID: 1055902341
+    locked: 0
+  - name: Player
+    uniqueID: 4048803929
     locked: 0

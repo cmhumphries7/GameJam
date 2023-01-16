@@ -12,12 +12,19 @@ public class PlantSource: MonoBehaviour
     public GameObject[] drainables;
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
+    int LayerPlantMask, LayerCloudMask;
+
 
     public void Start()
     {
        drainables = GameObject.FindGameObjectsWithTag("Drainable");
-       Debug.Log("These are the plant source " + drainables.Length);
        playerLife = FindObjectOfType<PlayerLife>();
+    }
+
+    public void Awake()
+    {
+        int LayerPlantMask = LayerMask.NameToLayer("PlantMask");
+        int LayerCloudMask = LayerMask.NameToLayer("CloudMask");
     }
 
     public void Update()
@@ -47,16 +54,18 @@ public class PlantSource: MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Inside on trigger stay");
 
         lifeMagic = collision.gameObject.GetComponent<LifeMagic>();
+        var layerMask = collision.gameObject.layer;
+        if (layerMask == LayerPlantMask)
+        {
+            Debug.Log("This is a plant");
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
         lifeMagic = null;
     }
-
-
 
 }

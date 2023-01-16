@@ -47,10 +47,6 @@ public class PlantSource: MonoBehaviour
 
         lifeMagic = collision.gameObject.GetComponent<LifeMagic>();
         var layerMask = collision.gameObject.layer;
-        if (layerMask == LayerPlantMask)
-        {
-            Debug.Log("This is a plant");
-        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -71,5 +67,8 @@ public class PlantSource: MonoBehaviour
             }
         }
     }
+
+    
+
 
 }

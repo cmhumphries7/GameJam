@@ -23,6 +23,7 @@ public class DialogueUI : MonoBehaviour
         CloseDialogueBox();
         player = FindObjectOfType<PlayerMovement>();
         playerMagic = FindObjectOfType<LifeMagic>();
+        currentDirector = null;
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)

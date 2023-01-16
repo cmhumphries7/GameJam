@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
+	<RootPaths>
+		<ProjectRoot>../../</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows/</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="2014706742" Type="User" Language="SFX" Hash="{51AC3094-C3C9-A62E-63BE-27D45C42A9DB}">
+			<ShortName>Main_Sound</ShortName>
+			<Path>Main_Sound.bnk</Path>
+			<Media>
+				<File Id="444356359" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Select_Sound_GameJam_Intro_V4.wav</ShortName>
+					<CachePath>SFX/UI_Select_Sound_GameJam_Intro_V4_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3817812628" Name="Play_Main_Start" DurationType="OneShot" DurationMin="4.069919" DurationMax="4.069919">
+					<MediaRefs>
+						<MediaRef Id="444356359"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{C023AEC6-7CAE-6E4D-D19E-3F3B6A5EA01E}</FileHash>
+</SoundBanksInfo>

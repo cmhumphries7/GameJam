@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="145">
+	<RootPaths>
+		<ProjectRoot>../../</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac/</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F56A610C-C7C4-F874-B68B-7ADDF94EBB7A}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="2014706742" Type="User" Language="SFX" Hash="{51AC3094-C3C9-A62E-63BE-27D45C42A9DB}">
+			<ShortName>Main_Sound</ShortName>
+			<Path>Main_Sound.bnk</Path>
+			<Media>
+				<File Id="444356359" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Select_Sound_GameJam_Intro_V4.wav</ShortName>
+					<CachePath>SFX/UI_Select_Sound_GameJam_Intro_V4_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3817812628" Name="Play_Main_Start" DurationType="OneShot" DurationMin="4.069919" DurationMax="4.069919">
+					<MediaRefs>
+						<MediaRef Id="444356359"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{6F5F5AC2-4A1F-DD8E-BF10-822EFBD39525}</FileHash>
+</SoundBanksInfo>

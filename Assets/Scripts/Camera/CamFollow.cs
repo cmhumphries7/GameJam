@@ -9,6 +9,7 @@ public class CamFollow : MonoBehaviour
 
     public float speed;
     public float maxDistance;
+    public Camera cam;
 
     // Update is called once per frame
     void FixedUpdate()

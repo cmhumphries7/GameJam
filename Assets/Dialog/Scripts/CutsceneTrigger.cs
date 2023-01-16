@@ -13,6 +13,7 @@ public class CutsceneTrigger : MonoBehaviour
         if (other.CompareTag("Player") && other.TryGetComponent(out PlayerDialogue player) && !alreadyTriggered)
         {
             player.GetComponent<PlayerMovement>().LockMovement(true);
+            player.GetComponent<LifeMagic>().LockMagic(true);
 
             timeline.Play();
             

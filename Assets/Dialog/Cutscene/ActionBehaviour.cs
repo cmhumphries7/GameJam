@@ -10,6 +10,7 @@ public class ActionBehavior : PlayableBehaviour
 
     private PlayableDirector director;
     private bool clipPlayed = false;
+    private float count = 0;
 
     public override void OnPlayableCreate(Playable playable)
     {
@@ -35,9 +36,14 @@ public class ActionBehavior : PlayableBehaviour
             clipPlayed = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.F))
         {
-            director.playableGraph.GetRootPlayable(0).SetSpeed(1d);
+            count += Time.deltaTime;
+            if (count >= 3f)
+            {
+                director.playableGraph.GetRootPlayable(0).SetSpeed(1d);
+                count = 0;
+            }
         }
     }
 

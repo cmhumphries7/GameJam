@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Levels/Main Menu.unity
     guid: 98aae830429b5164d974ea617e0882c7
   - enabled: 1
-    path: Assets/Scenes/Test Scene.unity
+    path: Assets/Scenes/Forest.unity
     guid: 0ad9e8afbc3fb764fbdc9dc05a28ef29
   - enabled: 1
     path: Assets/Scenes/Final Levels/DeathScene.unity

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80e7fef8464b3540aa057080e5b2a82, type: 3}
+  m_Name: Chief2a
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Endless day without a night is conscious thought without a dream. To free my
+    village from its pain, I brought aimless bliss upon our heads.
+  - And now, I plan to loose the key so dreams may come again.
+  responses:
+  - responseText: What dream do you dream?
+    dialogueObject: {fileID: 11400000, guid: 94b8ae1487a5f154a8790e22b09c1a35, type: 2}

@@ -9,47 +9,70 @@ public class LifeMagic : MonoBehaviour
     private Animator anim;
     private bool drainAnimPlaying = false;
     private bool powerAnimPlaying = false;
+    private PlayerMovement playerMovement;
+    public bool magicLocked = false;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (!magicLocked)
         {
-            isRequestingLife = true;
-            anim.SetBool("isDraining", true);
-            if (!drainAnimPlaying)
+            if (Input.GetKey(KeyCode.E))
             {
-                anim.SetTrigger("drainTrigger");
-                drainAnimPlaying = true;
+                isRequestingLife = true;
+                anim.SetBool("isDraining", true);
+                if (!drainAnimPlaying)
+                {
+                    anim.SetTrigger("drainTrigger");
+                    drainAnimPlaying = true;
+                }
+            }
+            else
+            {
+                isRequestingLife = false;
+                anim.SetBool("isDraining", false);
+                drainAnimPlaying = false;
+            }
+
+
+            if (Input.GetKey(KeyCode.F))
+            {
+                isGrowingLife = true;
+                anim.SetBool("isPowering", true);
+                if (!powerAnimPlaying)
+                {
+                    anim.SetTrigger("powerTrigger");
+                    powerAnimPlaying = true;
+                }
+
+            }
+            else
+            {
+                isGrowingLife = false;
+                anim.SetBool("isPowering", false);
+                powerAnimPlaying = false;
             }
         }
-        else
+    }
+
+    public void LockMagic(bool nlock)
+    {
+        magicLocked = nlock;
+        if (nlock == true)
         {
             isRequestingLife = false;
             anim.SetBool("isDraining", false);
             drainAnimPlaying = false;
-        }
-
-
-        if (Input.GetKey(KeyCode.F))
-        {
-            isGrowingLife = true;
-            anim.SetBool("isPowering", true);
-            if (!powerAnimPlaying)
-            {
-                anim.SetTrigger("powerTrigger");
-                powerAnimPlaying = true;
-            }
-
-        }
-        else
-        {
             isGrowingLife = false;
             anim.SetBool("isPowering", false);
             powerAnimPlaying = false;
         }
+
     }
+
+        
 }

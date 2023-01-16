@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class PlantSource: MonoBehaviour
 {
-    [SerializeField] public float drainRate = 50f;
+    [SerializeField] public float drainRate = 5f;
     [SerializeField] public float drainRadius = 5f;
     [SerializeField] public float plantHealth = 50f;
     [SerializeField] public Light2D glowLight;
@@ -13,7 +13,6 @@ public class PlantSource: MonoBehaviour
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
     int LayerPlantMask, LayerCloudMask;
-    [SerializeField] private GameObject tutorialPrompt;
 
 
     public void Start()
@@ -32,21 +31,7 @@ public class PlantSource: MonoBehaviour
     {
         if (lifeMagic != null)
         {
-            //Debug.Log("Checking for life magic");
-            if (lifeMagic.isRequestingLife && plantHealth > 0)
-            {
-                float timedDrainRate = drainRate * Time.deltaTime;
-                plantHealth = plantHealth - timedDrainRate;
-                playerLife.lifeForce = Mathf.Clamp(playerLife.lifeForce + timedDrainRate, 0, 100f);
-                if (plantHealth < 0)
-                {
-                    plantHealth = 0;
-                }
-                if (tutorialPrompt != null)
-                {
-                    tutorialPrompt.SetActive(false);
-                }
-            }
+            CheckForPlant();
         }
 
         glowLight.intensity = (plantHealth * 2f) / 100f;
@@ -71,6 +56,20 @@ public class PlantSource: MonoBehaviour
     public void OnTriggerExit2D(Collider2D collision)
     {
         lifeMagic = null;
+    }
+
+    public void CheckForPlant()
+    {
+        if (lifeMagic.isRequestingLife && plantHealth > 0)
+        {
+            float timedDrainRate = drainRate * Time.deltaTime;
+            plantHealth = plantHealth - timedDrainRate;
+            playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
+            if (plantHealth < 0)
+            {
+                plantHealth = 0;
+            }
+        }
     }
 
 }

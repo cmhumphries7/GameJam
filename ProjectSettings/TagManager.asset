@@ -19,7 +19,7 @@ TagManager:
   - Ground
   - PlantMask
   - Cloud
-  - 
+  - Death Layer
   - 
   - 
   - 
@@ -41,9 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Death Layer
+    uniqueID: 3484148767
+    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: 6
-    uniqueID: 3484148767
     locked: 0

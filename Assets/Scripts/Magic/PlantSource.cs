@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class PlantSource: MonoBehaviour
 {
-    [SerializeField] public float drainRate = 5f;
+    [SerializeField] public float drainRate = 50f;
     [SerializeField] public float drainRadius = 5f;
     [SerializeField] public float plantHealth = 50f;
     [SerializeField] public Light2D glowLight;

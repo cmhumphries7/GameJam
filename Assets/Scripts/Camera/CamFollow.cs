@@ -19,7 +19,7 @@ public class CamFollow : MonoBehaviour
 
         Vector2 targetPos = new Vector2(0, 0);
         targetPos.x = target.transform.position.x;
-        targetPos.y = target.transform.position.y;
+        targetPos.y = target.transform.position.y + 3;
 
         float dist = Vector2.Distance(camPos, targetPos);
         if (dist > maxDistance) {

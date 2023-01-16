@@ -35,32 +35,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (dialogueUI != null && dialogueUI.IsOpen) return; //locks movement when dialogueUI is open
+        //if (dialogueUI != null && dialogueUI.IsOpen) return; //locks movement when dialogueUI is open
 
         if (!movementLocked)
         {
             movePlayerVector = Input.GetAxis("Horizontal");
-
             playerRigidBody2D.velocity = new Vector2(movePlayerVector * speed, playerRigidBody2D.velocity.y);
-
-            if (Input.GetKeyDown("space") && isGrounded())
-            {
-                anim.SetTrigger("takeOff");
-                playerRigidBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            }
-            else
-            {
-                anim.SetBool("isJumping", true);
-            }
         }
         else
         {
+            movePlayerVector = 0;
+            //anim.SetBool("isRunning", false);
             playerRigidBody2D.velocity = new Vector2(0, playerRigidBody2D.velocity.y);
-        }
-
-        if (isGrounded())
-        {
-            anim.SetBool("isJumping", false);
         }
 
         if (movePlayerVector == 0)
@@ -82,26 +68,33 @@ public class PlayerMovement : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
+        if (Input.GetKeyDown("space") && isGrounded() && !movementLocked)
+        {
+            anim.SetTrigger("takeOff");
+            playerRigidBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+        else
+        {
+            anim.SetBool("isJumping", true);
+        }
+        if (isGrounded())
+        {
+            anim.SetBool("isJumping", false);
+        }
+
     }
 
-        public void LockMovement(bool nlock)
-        {
-            if (nlock)
-            {
-                movementLocked = true;
-            }
-            else
-            {
-                movementLocked = false;
-            }
-        }
+    public void LockMovement(bool nlock)
+    {
+        movementLocked = nlock;
+    }
 
-        bool isGrounded()
-        {
-            RaycastHit2D hit = Physics2D.Raycast(capsuleColliderPlayer.bounds.center, Vector2.down, heightTestPlayer, layerMaskGround);
-            bool isGrounded = hit.collider != null;
-            return isGrounded;
-        }
+    bool isGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(capsuleColliderPlayer.bounds.center, Vector2.down, heightTestPlayer, layerMaskGround);
+        bool isGrounded = hit.collider != null;
+        return isGrounded;
+    }
 
 }
 

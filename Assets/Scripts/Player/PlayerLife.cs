@@ -14,6 +14,7 @@ public class PlayerLife : MonoBehaviour
     public PlantSource plantSource;
     public GrowPlant growPlant;
     public GameObject[] drainables;
+    public bool isIntroLevel = false;
 
     void Start()
     {
@@ -25,13 +26,16 @@ public class PlayerLife : MonoBehaviour
 
         drainables = plantSource.getDrainables();
 
-        StartCoroutine(LifeDecay(player));
+        if (!isIntroLevel)
+        {
+            StartCoroutine(LifeDecay(player));
+        }
         Debug.Log("These are the player " + (plantSource.drainables).Length);
     }
 
     void Update()
     {
-        glowLight.intensity = lifeForce / 100;
+        glowLight.pointLightOuterRadius = lifeForce / 25;
 
     }
 

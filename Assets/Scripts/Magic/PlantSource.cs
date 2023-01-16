@@ -9,15 +9,19 @@ public class PlantSource: MonoBehaviour
     [SerializeField] public float drainRadius = 5f;
     [SerializeField] public float plantHealth = 50f;
     [SerializeField] public Light2D glowLight;
+    [SerializeField] private GameObject tutorialPrompt;
     public GameObject[] drainables;
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
+    private float startHealth;
 
     public void Start()
     {
        drainables = GameObject.FindGameObjectsWithTag("Drainable");
        Debug.Log("These are the plant source " + drainables.Length);
        playerLife = FindObjectOfType<PlayerLife>();
+       startHealth = plantHealth;
+    
     }
 
     public void Update()
@@ -27,9 +31,13 @@ public class PlantSource: MonoBehaviour
             //Debug.Log("Checking for life magic");
             if (lifeMagic.isRequestingLife && plantHealth > 0)
             {
+                if (tutorialPrompt != null)
+                {
+                    tutorialPrompt.SetActive(false);
+                }
                 float timedDrainRate = drainRate * Time.deltaTime;
                 plantHealth = plantHealth - timedDrainRate;
-                playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
+                playerLife.lifeForce = Mathf.Clamp(playerLife.lifeForce + timedDrainRate, 0, 100f);
                 if (plantHealth < 0)
                 {
                     plantHealth = 0;

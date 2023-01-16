@@ -16,7 +16,8 @@ public class PlantSource: MonoBehaviour
     private LifeMagic lifeMagic;
     [SerializeField] float phaseTimer = 0f;
     float timeToNextPhase = 5f;
-    bool nextPhase = true;
+    bool nextPhase = false;
+
 
 
 
@@ -81,19 +82,16 @@ public class PlantSource: MonoBehaviour
             cloudHealth = cloudHealth - timedDrainRate;
             playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;          
         }
-        if (cloudHealth < 100)
+        if (cloudHealth <= 100)
         {
-            cloudHealth = 100;
             phaseTimer += Time.deltaTime;
-            if (phaseTimer < timeToNextPhase)
+            if (phaseTimer < timeToNextPhase && !nextPhase)
             {
                 lifeMagic.LockMagic(true);
             }
             else
             {
-                phaseTimer = 0f;
-                Debug.Log("phase timer is " + phaseTimer);
-                lifeMagic.LockMagic(false);
+                ResetTimer();
             }
             
         }
@@ -101,10 +99,9 @@ public class PlantSource: MonoBehaviour
 
     public void PhaseTwo()
     {
-        if (lifeMagic.isRequestingLife && cloudHealth > 50)
+        if (lifeMagic.isRequestingLife && cloudHealth > 50 && nextPhase)
         {
             //Debug.Log("This is a cloud");
-            lifeMagic.LockMagic(false);
             float timedDrainRate = cloudDrainRate * Time.deltaTime;
             cloudHealth = cloudHealth - timedDrainRate;
             playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
@@ -113,6 +110,14 @@ public class PlantSource: MonoBehaviour
                 cloudHealth = 50;
             }
         }
+    }
+
+    public void ResetTimer()
+    {
+        phaseTimer = 0f;
+        Debug.Log("phase timer is " + phaseTimer);
+        lifeMagic.LockMagic(false);
+        nextPhase = true;
     }
 
 

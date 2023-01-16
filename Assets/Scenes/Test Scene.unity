@@ -306,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 230930071}
   - component: {fileID: 230930072}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: right void
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c33871c8638eb4c41bfb4577f3b58627, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -639,7 +639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 463324959}
   - component: {fileID: 463324960}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Death Vignette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,9 +685,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2746520035398072722, guid: c1897284d45fd38429e8bb34fb532cce, type: 3}
+      propertyPath: drainRate
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4422241771222063869, guid: c1897284d45fd38429e8bb34fb532cce, type: 3}
       propertyPath: m_Name
       value: Sunflower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422241771222063870, guid: c1897284d45fd38429e8bb34fb532cce, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4422241771222063871, guid: c1897284d45fd38429e8bb34fb532cce, type: 3}
       propertyPath: m_RootOrder
@@ -857,6 +865,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2746520035398072722, guid: c1897284d45fd38429e8bb34fb532cce, type: 3}
+      propertyPath: drainRate
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746520035398072722, guid: c1897284d45fd38429e8bb34fb532cce, type: 3}
       propertyPath: glowLight
       value: 
       objectReference: {fileID: 1195721939}
@@ -867,6 +879,10 @@ PrefabInstance:
     - target: {fileID: 4422241771222063869, guid: c1897284d45fd38429e8bb34fb532cce, type: 3}
       propertyPath: m_Name
       value: Sunflower
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422241771222063870, guid: c1897284d45fd38429e8bb34fb532cce, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4422241771222063871, guid: c1897284d45fd38429e8bb34fb532cce, type: 3}
       propertyPath: m_RootOrder
@@ -924,7 +940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857388317}
   - component: {fileID: 857388318}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: bottom void
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -986,7 +1002,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c33871c8638eb4c41bfb4577f3b58627, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -1401,7 +1417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1198861030}
   - component: {fileID: 1198861031}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: void center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1440,7 +1456,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -1463,7 +1479,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 27e6a14c2c628c247b68188885d4527e, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -1485,7 +1501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1207017915}
   - component: {fileID: 1207017916}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: top void
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1547,7 +1563,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c33871c8638eb4c41bfb4577f3b58627, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -2541,7 +2557,7 @@ MonoBehaviour:
   playerLife: {fileID: 0}
   growables: []
   vine: {fileID: 327950279521076854}
-  toScale: {x: 500, y: 0.3, z: 0}
+  toScale: {x: 50, y: 0.3, z: 0}
   tutorialPrompt: {fileID: 0}
 --- !u!1 &1893349894
 GameObject:
@@ -2926,7 +2942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2022910894}
   - component: {fileID: 2022910895}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: left void
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2988,7 +3004,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c33871c8638eb4c41bfb4577f3b58627, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0

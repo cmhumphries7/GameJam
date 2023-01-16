@@ -17,6 +17,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && other.TryGetComponent(out PlayerDialogue player) && !alreadyTriggered)
         {
+            player.GetComponent<PlayerMovement>().LockMovement(true);
+            player.GetComponent<LifeMagic>().LockMagic(true);
             foreach (DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
             {
                 if (responseEvents.DialogueObject == dialogueObject)

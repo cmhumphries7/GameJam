@@ -19,13 +19,12 @@ public class DeathVignetteScript : MonoBehaviour
     private PlayerLife playerLife;
 
     private GameObject player;
+    public float startingCircleSize;
 
         private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerLife = FindObjectOfType<PlayerLife>();
-
-        circlePosition = GetComponentInParent<Transform>().position;
 
         centerTransform = transform.Find("void center");
         leftTransform = transform.Find("left void");
@@ -33,17 +32,18 @@ public class DeathVignetteScript : MonoBehaviour
         bottomTransform = transform.Find("bottom void");
         topTransform = transform.Find("top void");
 
-        setCircleSize(circlePosition,new Vector3(25, 25));
+        setCircleSize(circlePosition,new Vector3(5, 5));
 
-        targetCircleSize = new Vector3(5, 5);
+        targetCircleSize = new Vector3(1, 1);
     }
 
     private void Update()
     {
-
-        circlePosition = player.transform.position;
+        startingCircleSize = playerLife.lifeForce / 4;
+        circlePosition = player.transform.Find("HEAD").position;
         Vector3 sizeChangeVector = (targetCircleSize - circleSize).normalized;
-        Vector3 newCircleSize = circleSize + sizeChangeVector * playerLife.lifeForce;
+        //the 4 stands for magic
+        Vector3 newCircleSize = (circleSize + sizeChangeVector * startingCircleSize);
         setCircleSize(circlePosition, newCircleSize);
     }
 
@@ -52,19 +52,19 @@ public class DeathVignetteScript : MonoBehaviour
         centerTransform.localScale = size;
         transform.position = position;
 
-        topTransform.localScale = new Vector3(size.x, 25);
+        topTransform.localScale = new Vector3(20, 20);
         topTransform.localPosition = new Vector3(0, topTransform.localScale.y * .5f + size.y * .5f);
 
 
-        bottomTransform.localScale = new Vector3(size.x, 25);
+        bottomTransform.localScale = new Vector3(20, 20);
         bottomTransform.localPosition = new Vector3(0,-topTransform.localScale.y * .5f - size.y * .5f);
 
 
-        leftTransform.localScale = new Vector3(25, size.y);
+        leftTransform.localScale = new Vector3(20, size.y);
         leftTransform.localPosition = new Vector3(-leftTransform.localScale.x * .5f - size.x * .5f, 0f);
 
 
-        rightTransform.localScale = new Vector3(25, size.y);
-        rightTransform.localPosition = new Vector3(+leftTransform.localScale.x * .5f + size.x * .5f, 0f, 0f);
+        rightTransform.localScale = new Vector3(20, size.y);
+        rightTransform.localPosition = new Vector3(+leftTransform.localScale.x * .5f + size.x * .5f, 0f);
     }
 }

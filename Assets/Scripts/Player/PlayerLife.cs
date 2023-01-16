@@ -8,12 +8,14 @@ using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     [SerializeField] public float lifeForce = 100f;
-    [SerializeField] public float decayRate = 6f;
+    [SerializeField] public float decayRate = 1f;
+    public float timedDecayRate;
     [SerializeField] public Light2D glowLight;
     private GameObject player;
     public PlantSource plantSource;
     public GrowPlant growPlant;
     public GameObject[] drainables;
+    public bool isIntroLevel = false;
 
     void Start()
     {
@@ -25,13 +27,18 @@ public class PlayerLife : MonoBehaviour
 
         drainables = plantSource.getDrainables();
 
-        StartCoroutine(LifeDecay(player));
+        if (!isIntroLevel)
+        {
+            StartCoroutine(LifeDecay(player));
+        }
         Debug.Log("These are the player " + (plantSource.drainables).Length);
-    }
 
-    void Update()
+}
+
+void Update()
     {
-        glowLight.intensity = lifeForce / 100;
+        glowLight.pointLightOuterRadius = lifeForce / 25;
+        timedDecayRate = decayRate * Time.deltaTime;
 
     }
 
@@ -39,10 +46,10 @@ public class PlayerLife : MonoBehaviour
     {
         while (lifeForce > 0f)
         {
-            lifeForce = lifeForce - decayRate;
+            lifeForce = lifeForce - timedDecayRate ;
             Debug.Log("Player's remaining lifeForce: " + lifeForce);
             Die();
-            yield return new WaitForSeconds(3);
+            yield return null;
         }
         yield return null;
         //Debug.Log("Finished.");
@@ -51,7 +58,7 @@ public class PlayerLife : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("life force is zero");
+        //Debug.Log("life force is zero");
         if (lifeForce <= 0 )
         {
             SceneManager.LoadScene("DeathScene");

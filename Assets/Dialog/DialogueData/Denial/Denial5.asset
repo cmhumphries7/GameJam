@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80e7fef8464b3540aa057080e5b2a82, type: 3}
+  m_Name: Denial5
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Yeah, it all sounded a bit mad if you ask me.
+  - Still, I always wondered what might be in there, considering they banned us from
+    ever even looking at that cave.
+  responses:
+  - responseText: Stay here.
+    dialogueObject: {fileID: 11400000, guid: b860ca46fe3481c45a5815cb2a5b07a6, type: 2}
+  - responseText: I'll get to the bottom of this.
+    dialogueObject: {fileID: 11400000, guid: 69312d16b793c3a4fa92851da36c9031, type: 2}

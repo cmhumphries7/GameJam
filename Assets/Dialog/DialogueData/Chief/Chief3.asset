@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80e7fef8464b3540aa057080e5b2a82, type: 3}
+  m_Name: Chief3
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "I\u2019ve expected a lot of things over the years, Great Spirit. And I suppose,
+    even when we first found this cave all those years ago, I expected this, and
+    you- in the end."
+  responses:
+  - responseText: Do you control me?
+    dialogueObject: {fileID: 11400000, guid: 4a5c366d23ec0134eac3c823882ae894, type: 2}

@@ -7,12 +7,13 @@ public class PlayerDialogue : MonoBehaviour
     [SerializeField] private DialogueUI dialogueUI;
 
     public DialogueUI DialogueUI => dialogueUI;
+    private PlayerMovement playerMove;
 
     public IInteractable Interactable { get; set;}
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerMove = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -21,6 +22,11 @@ public class PlayerDialogue : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Interactable?.Interact(this);
+            if (Interactable != null)
+            {
+                Interactable.Interact(this);
+                playerMove.LockMovement(true);
+            }
         }
     }
 }

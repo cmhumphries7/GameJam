@@ -13,12 +13,14 @@ public class DialogueUI : MonoBehaviour
 
     private ResponseHandler responseHandler;
     private TypewriterEffect typerwriterEffect;
+    [SerializeField] PlayerMovement player;
 
     private void Start()
     {
         typerwriterEffect = GetComponent<TypewriterEffect>();
         responseHandler = GetComponent<ResponseHandler>();
         CloseDialogueBox();
+        player = FindObjectOfType<PlayerMovement>();
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)
@@ -87,7 +89,10 @@ public class DialogueUI : MonoBehaviour
             currentDirector.playableGraph.GetRootPlayable(0).SetSpeed(1d);
             currentDirector = null;
         }
-
+        else
+        {
+            player.LockMovement(false); //unlocks movement at end of dialogue only if it is not part of a cutscene
+        }
     }
 
 

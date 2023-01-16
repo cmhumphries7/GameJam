@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     [SerializeField] public float lifeForce = 100f;
-    [SerializeField] public float decayRate = 5f;
+    [SerializeField] public float decayRate = 6f;
     [SerializeField] public Light2D glowLight;
     private GameObject player;
     public PlantSource plantSource;
@@ -46,7 +46,7 @@ public class PlayerLife : MonoBehaviour
             lifeForce = lifeForce - decayRate;
             Debug.Log("Player's remaining lifeForce: " + lifeForce);
             Die();
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(3);
         }
         yield return null;
         //Debug.Log("Finished.");

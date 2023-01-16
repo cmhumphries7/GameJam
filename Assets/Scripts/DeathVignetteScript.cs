@@ -33,15 +33,15 @@ public class DeathVignetteScript : MonoBehaviour
         bottomTransform = transform.Find("bottom void");
         topTransform = transform.Find("top void");
 
-        setCircleSize(circlePosition,new Vector3(25, 25));
+        setCircleSize(circlePosition,new Vector3(1000, 1000));
 
-        targetCircleSize = new Vector3(5, 5);
+        targetCircleSize = new Vector3(100, 100);
     }
 
     private void Update()
     {
 
-        circlePosition = player.transform.position;
+        circlePosition = player.transform.Find("HEAD").position;
         Vector3 sizeChangeVector = (targetCircleSize - circleSize).normalized;
         Vector3 newCircleSize = circleSize + sizeChangeVector * playerLife.lifeForce;
         setCircleSize(circlePosition, newCircleSize);
@@ -52,19 +52,19 @@ public class DeathVignetteScript : MonoBehaviour
         centerTransform.localScale = size;
         transform.position = position;
 
-        topTransform.localScale = new Vector3(size.x, 25);
+        topTransform.localScale = new Vector3(1000, 1000);
         topTransform.localPosition = new Vector3(0, topTransform.localScale.y * .5f + size.y * .5f);
 
 
-        bottomTransform.localScale = new Vector3(size.x, 25);
+        bottomTransform.localScale = new Vector3(1000, 1000);
         bottomTransform.localPosition = new Vector3(0,-topTransform.localScale.y * .5f - size.y * .5f);
 
 
-        leftTransform.localScale = new Vector3(25, size.y);
+        leftTransform.localScale = new Vector3(1000, size.y);
         leftTransform.localPosition = new Vector3(-leftTransform.localScale.x * .5f - size.x * .5f, 0f);
 
 
-        rightTransform.localScale = new Vector3(25, size.y);
+        rightTransform.localScale = new Vector3(1000, size.y);
         rightTransform.localPosition = new Vector3(+leftTransform.localScale.x * .5f + size.x * .5f, 0f, 0f);
     }
 }

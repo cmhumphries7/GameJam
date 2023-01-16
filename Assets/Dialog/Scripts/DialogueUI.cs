@@ -7,13 +7,14 @@ public class DialogueUI : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textLabel;
-    public PlayableDirector currentDirector;
+    public PlayableDirector currentDirector = null;
 
     public bool IsOpen { get; private set;}
 
     private ResponseHandler responseHandler;
     private TypewriterEffect typerwriterEffect;
     [SerializeField] PlayerMovement player;
+    [SerializeField] LifeMagic playerMagic;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class DialogueUI : MonoBehaviour
         responseHandler = GetComponent<ResponseHandler>();
         CloseDialogueBox();
         player = FindObjectOfType<PlayerMovement>();
+        playerMagic = FindObjectOfType<LifeMagic>();
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)
@@ -92,6 +94,8 @@ public class DialogueUI : MonoBehaviour
         else
         {
             player.LockMovement(false); //unlocks movement at end of dialogue only if it is not part of a cutscene
+            playerMagic.LockMagic(false);
+            
         }
     }
 

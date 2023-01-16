@@ -13,6 +13,7 @@ public class PlantSource: MonoBehaviour
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
     int LayerPlantMask, LayerCloudMask;
+    [SerializeField] private GameObject tutorialPrompt;
 
 
     public void Start()
@@ -40,6 +41,10 @@ public class PlantSource: MonoBehaviour
                 if (plantHealth < 0)
                 {
                     plantHealth = 0;
+                }
+                if (tutorialPrompt != null)
+                {
+                    tutorialPrompt.SetActive(false);
                 }
             }
         }

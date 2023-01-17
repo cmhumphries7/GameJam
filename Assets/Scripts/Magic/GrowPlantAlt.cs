@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Rendering.Universal;
 
 public class GrowPlantAlt : MonoBehaviour
@@ -20,10 +21,12 @@ public class GrowPlantAlt : MonoBehaviour
     private Coroutine growRoutine;
     [SerializeField] private GameObject tutorialPrompt;
 
+    public AudioSource audioSource;
     void Start()
     {
         playerLife = FindObjectOfType<PlayerLife>();
         startScalesize = vine.localScale;
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -35,12 +38,13 @@ public class GrowPlantAlt : MonoBehaviour
             if (playerLife.lifeForce >= growCost)
             {
 
-
                 if (lifeMagic.isGrowingLife && growPlantHealth < growCost)
                 {
+   
                     float timedDrainRate = drainRate * Time.deltaTime;
                     growPlantHealth = Mathf.Clamp(growPlantHealth + timedDrainRate, 0f, growCost);
                     playerLife.lifeForce = Mathf.Clamp(playerLife.lifeForce - timedDrainRate, 0, 100f);
+                    audioSource.Play();
                     if (tutorialPrompt != null)
                     {
                         tutorialPrompt.SetActive(false);

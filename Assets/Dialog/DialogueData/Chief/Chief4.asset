@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Chief4
   m_EditorClassIdentifier: 
   dialogue:
-  - "Great Spirit- The Key.\r"
+  - Great Spirit-
+  - "The Key.\r"
   responses: []

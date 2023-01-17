@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Chief3a
   m_EditorClassIdentifier: 
   dialogue:
-  - No. But I have tried... I am tired of trying. Soon, you shall be free. And I,
-    at peace.
+  - "No. But I have tried... I am tired of trying. \nSoon, you shall be free. And
+    I, at peace."
   responses:
   - responseText: What freedom do you speak of, Chief?
     dialogueObject: {fileID: 11400000, guid: 0042f94c2d694e64b959b246d58074b6, type: 2}

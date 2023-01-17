@@ -17,5 +17,5 @@ MonoBehaviour:
   responses:
   - responseText: I shall try.
     dialogueObject: {fileID: 11400000, guid: 654d6ff0c02a9ac41a114b3ba6919ed3, type: 2}
-  - responseText: What ails you, brother.
+  - responseText: What ails you, brother?
     dialogueObject: {fileID: 11400000, guid: 3248f4a1ed4d9bb4f8b5802c6be5c7f3, type: 2}

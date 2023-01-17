@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Oh, hey, Great Spirit.
-  - Did FRANTIC NPC ever find you?
+  - Did Shark ever find you?
   responses:
   - responseText: ...
     dialogueObject: {fileID: 11400000, guid: b41f5f92a5a098d42b3b1de9731d4956, type: 2}

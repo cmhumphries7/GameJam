@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - If you say so.
-  - If you do end up running into FRANTIC NPC later, tell him that I haven't forgotten
+  - If you do end up running into Shark later, tell him that I haven't forgotten
     how he almost knocked me over earlier.
   responses: []

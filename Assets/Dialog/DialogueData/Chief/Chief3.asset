@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Chief3
   m_EditorClassIdentifier: 
   dialogue:
-  - "I\u2019ve expected a lot of things over the years, Great Spirit. And I suppose,
-    even when we first found this cave all those years ago, I expected this, and
-    you- in the end."
+  - "I\u2019ve expected a lot of things over the years, Great Spirit. "
+  - And I suppose, even when we first found this cave all those years ago, I expected
+    this . . .
+  - And you- in the end.
   responses:
   - responseText: Do you control me?
     dialogueObject: {fileID: 11400000, guid: 4a5c366d23ec0134eac3c823882ae894, type: 2}

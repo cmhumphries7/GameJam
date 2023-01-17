@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Chief2b
   m_EditorClassIdentifier: 
   dialogue:
-  - I dream of a strong heart at peace. Now go to the place you fear to enter, and
-    receive your freedom.
+  - 'I dream of a strong heart at peace. '
+  - Now go to the place you fear to enter and embrace your freedom.
   responses: []

@@ -43,7 +43,6 @@ public class LifeMagic : MonoBehaviour
             {
                 isGrowingLife = true;
                 anim.SetBool("isPowering", true);
-
                 if (!powerAnimPlaying)
                 {
                     anim.SetTrigger("powerTrigger");

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chief2
   m_EditorClassIdentifier: 
   dialogue:
-  - You shall see, Great Sprit. Soon, you shall know all that I have done.
+  - You shall see, Great Spirit. Soon, you shall know all that I have done.
   - 'One wrong, one right. '
   - Both, out of love.
   responses:

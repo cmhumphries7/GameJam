@@ -16,7 +16,6 @@ public class PlayerLife : MonoBehaviour
     private GameObject player;
     public PlantSource plantSource;
     public GrowPlant growPlant;
-    public GameObject[] drainables;
     public bool isIntroLevel = false;
     public Color endColor;
 
@@ -27,8 +26,6 @@ public class PlayerLife : MonoBehaviour
         plantSource = FindObjectOfType<PlantSource>();
 
         growPlant = FindObjectOfType<GrowPlant>();
-
-        drainables = plantSource.getDrainables();
 
         if (!isIntroLevel)
         {

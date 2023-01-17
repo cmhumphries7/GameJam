@@ -67,7 +67,7 @@ public class PlantSource: MonoBehaviour
         {
             float timedDrainRate = drainRate * Time.deltaTime;
             plantHealth = plantHealth - timedDrainRate;
-            playerLife.lifeForce = Mathf.Clamp(playerLife.lifeForce + timedDrainRate, 0, 100f);
+            playerLife.lifeForce = Mathf.Clamp(playerLife.lifeForce + timedDrainRate, 0, playerLife.maxlifeforce);
             if (plantHealth < 0)
             {
                 plantHealth = 0;

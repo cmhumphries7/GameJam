@@ -339,7 +339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ashley Burkhart\n\r\nMichael Henry\n\r\nChris Humpries\n\r\nMarkos Orfanos
+  m_text: "Ashley Burkart\n\r\nMichael Henry\n\r\nChris Humphries\n\r\nMarkos Orfanos
     \n\r\nRylan Worker\n\r\nDylan Treadwell\n\r\nPhyrun Deab\n\r\nAshley Devane "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

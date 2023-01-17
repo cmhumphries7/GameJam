@@ -6,15 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Cave.unity
-    guid: 552a67c3e4146704dbe25c6430928b7e
-  - enabled: 1
     path: Assets/Scenes/Final Levels/Main Menu.unity
     guid: 98aae830429b5164d974ea617e0882c7
   - enabled: 1
+    path: Assets/Scenes/Village.unity
+    guid: 9797b873e8de8514aa304ffaeafdee79
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: b01409c878f769143b59929feb387305
+  - enabled: 1
+    path: Assets/Scenes/Cave.unity
+    guid: 552a67c3e4146704dbe25c6430928b7e
+  - enabled: 1
+    path: Assets/Scenes/Final Levels/Credits_Test.unity
+    guid: 5fe1607e48e31cd40be86ce1a59764d2
+  - enabled: 1
     path: Assets/Scenes/Final Levels/DeathScene.unity
     guid: 95a8b172792609f4580676123d8d6c5a
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   m_configObjects: {}

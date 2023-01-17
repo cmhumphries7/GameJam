@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Chief2
   m_EditorClassIdentifier: 
   dialogue:
-  - You shall see, Great Sprit. Soon enough, you shall know all that I have done.
-    One wrong, one right. Both, out of love.
+  - You shall see, Great Sprit. Soon, you shall know all that I have done.
+  - 'One wrong, one right. '
+  - Both, out of love.
   responses:
   - responseText: How can love wrought anger, woe, and endless sleep?
     dialogueObject: {fileID: 11400000, guid: 78eddfab49b807b4298e00e77b4e1c99, type: 2}

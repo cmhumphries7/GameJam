@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Anger3
   m_EditorClassIdentifier: 
   dialogue:
-  - How dare you call me brother- when you fail to remember your own sibling. You're
-    a shattered fool who causes life to grow in vain.
+  - How dare you call me brother- when you fail to remember your own sibling.
+  - You're a shattered fool who causes life to grow in vain.
   responses:
   - responseText: ...
     dialogueObject: {fileID: 11400000, guid: 7c232cd6016527e48bf4342ee4537c17, type: 2}

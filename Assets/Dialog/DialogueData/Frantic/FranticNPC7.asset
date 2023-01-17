@@ -16,5 +16,5 @@ MonoBehaviour:
   - Please, you're the only one... Only you can...
   - ...
   responses:
-  - responseText: Frantic NPC?
+  - responseText: Shark?
     dialogueObject: {fileID: 0}

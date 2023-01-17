@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Denial4
   m_EditorClassIdentifier: 
   dialogue:
-  - "Beats me. I felt some rumblings earlier and now this black stuff has been popping
-    up, but that\u2019s all I know. "
+  - 'Beats me. I felt some rumblings earlier and now this black stuff has been popping
+    up, but that''s all I know. '
   - Owl and Mushroom headed that way too, but they haven't come back yet.
   responses:
   - responseText: Stay here.

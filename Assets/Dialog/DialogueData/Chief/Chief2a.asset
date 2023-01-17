@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Chief2a
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Endless day without a night is conscious thought without a dream. '
-  - To free my village from its pain, I brought aimless bliss upon our heads.
+  - 'Endless day without a night is conscious thought without a dream. To free my
+    village from its pain, I brought aimless bliss upon our heads. '
   - And now, I plan to loose the key so dreams may come again.
   responses:
   - responseText: What dream do you dream?

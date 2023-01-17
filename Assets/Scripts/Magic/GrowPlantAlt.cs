@@ -40,11 +40,15 @@ public class GrowPlantAlt : MonoBehaviour
 
                 if (lifeMagic.isGrowingLife && growPlantHealth < growCost)
                 {
-                        audioSource.Play();
-                  
+   
                     float timedDrainRate = drainRate * Time.deltaTime;
                     growPlantHealth = Mathf.Clamp(growPlantHealth + timedDrainRate, 0f, growCost);
-                    playerLife.lifeForce = Mathf.Clamp(playerLife.lifeForce - timedDrainRate, 0, 100f);         
+                    playerLife.lifeForce = Mathf.Clamp(playerLife.lifeForce - timedDrainRate, 0, 100f);
+                    if (audioSource != null)
+                    {
+                        audioSource.Play();
+                    }
+                    
                     if (tutorialPrompt != null)
                     {
                         tutorialPrompt.SetActive(false);

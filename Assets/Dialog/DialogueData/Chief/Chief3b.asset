@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Chief3b
   m_EditorClassIdentifier: 
   dialogue:
-  - The freedom to enter the place you most fear- to live while you live and die
-    with a strong heart.
+  - The freedom to enter the place you most fear-
+  - to live while you live and die with a strong heart.
   responses: []

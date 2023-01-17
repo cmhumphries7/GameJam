@@ -28,7 +28,11 @@ public class PlantSource: MonoBehaviour
             CheckForPlant();
         }
 
-        glowLight.intensity = (plantHealth * 2f) / 100f;
+        if (glowLight != null)
+        {
+            glowLight.intensity = (plantHealth * 2f) / 100f;
+        }
+        
     }
 
     public GameObject[] getDrainables()

@@ -44,7 +44,11 @@ public class GrowPlantAlt : MonoBehaviour
                     float timedDrainRate = drainRate * Time.deltaTime;
                     growPlantHealth = Mathf.Clamp(growPlantHealth + timedDrainRate, 0f, growCost);
                     playerLife.lifeForce = Mathf.Clamp(playerLife.lifeForce - timedDrainRate, 0, 100f);
-                    audioSource.Play();
+                    if (audioSource != null)
+                    {
+                        audioSource.Play();
+                    }
+                    
                     if (tutorialPrompt != null)
                     {
                         tutorialPrompt.SetActive(false);

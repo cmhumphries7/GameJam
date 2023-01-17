@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - "I\u2019ve expected a lot of things over the years, Great Spirit. "
-  - And I suppose, even when we first found this cave . . . all those years ago,
-    I expected this . . .
+  - And I suppose, even when we first found this cave... all those years ago, I expected
+    this...
   - And you- in the end.
   responses:
   - responseText: Do you control me?

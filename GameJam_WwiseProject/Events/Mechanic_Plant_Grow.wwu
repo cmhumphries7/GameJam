@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{DE05EC2C-4D2E-41BA-A4B6-278D3F7A0938}" SchemaVersion="110">
-	<Events>
-		<WorkUnit Name="Mechanic_Plant_Grow" ID="{DE05EC2C-4D2E-41BA-A4B6-278D3F7A0938}" PersistMode="Standalone"/>
-	</Events>
-</WwiseDocument>

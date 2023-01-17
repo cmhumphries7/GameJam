@@ -1,6 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	3817812628	Play_Main_Start			\Default Work Unit\Play_Main_Start	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	444356359	UI_Select_Sound_GameJam_Intro_V4	Y:\Desktop\Game Jam 2023\GameJam\GameJam_WwiseProject\.cache\Mac\SFX\UI_Select_Sound_GameJam_Intro_V4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI_Select_Sound_GameJam_Intro_V4		705760
-

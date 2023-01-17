@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Anger2
   m_EditorClassIdentifier: 
   dialogue:
-  - You speak as if your power was you own- to harness and wield. It is the Chief,
-    powerless one, who plans to wield you and destroy us all!
+  - You speak as if your power was you own- to harness and wield.
+  - ' But it is the Chief, powerless one, who wields you and plans to destroy us
+    all!'
   responses:
   - responseText: Explain yourself.
     dialogueObject: {fileID: 11400000, guid: 5ff598cb1e2255344ad2561aa36838f0, type: 2}

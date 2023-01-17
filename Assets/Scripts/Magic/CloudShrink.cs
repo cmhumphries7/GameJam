@@ -21,7 +21,7 @@ public class CloudShrink : MonoBehaviour
     private void Awake()
     {
         scaleChange = new Vector3(-1.5f, -1.5f, -1.5f);
-        //positionChange = new Vector3(-)
+        positionChange = new Vector3(-1f, -1f, -1f);
     }
 
     public void Start()
@@ -33,7 +33,9 @@ public class CloudShrink : MonoBehaviour
     {
         if (lifeMagic != null)
         {
-            CheckForCloud();
+            PhaseOne();
+            PhaseTwo();
+            PhaseThree();
         }
         glowLight.intensity = (cloudHealth * 2f) / 100f;
     }
@@ -49,12 +51,6 @@ public class CloudShrink : MonoBehaviour
         lifeMagic = null;
     }
 
-    public void CheckForCloud()
-    {
-        PhaseOne();
-        PhaseTwo();
-        PhaseThree();
-    }
 
     #region Cloud Drain Phases
     public void PhaseOne()
@@ -70,8 +66,8 @@ public class CloudShrink : MonoBehaviour
         if (cloudHealth <= 100 && !phaseComplete && !phaseOneComplete)
         {
             Debug.Log("Entering first timer");
+
             phaseTimer += Time.deltaTime;
-            scaleChange = -scaleChange;
             if (phaseTimer < timeToNextPhase)
             {
                 lifeMagic.LockMagic(true);
@@ -83,6 +79,7 @@ public class CloudShrink : MonoBehaviour
             phaseComplete = true;
             ResetTimer();
             phaseOneComplete = true;
+            ShrinkCloud();
         }
     }
 
@@ -100,7 +97,6 @@ public class CloudShrink : MonoBehaviour
         if (cloudHealth <= 50 && !phaseComplete && !phaseTwoComplete)
         {
             Debug.Log("Entering second timer");
-            scaleChange = -scaleChange;
             phaseTimer += Time.deltaTime;
             if (phaseTimer < timeToNextPhase)
             {
@@ -113,6 +109,8 @@ public class CloudShrink : MonoBehaviour
             phaseComplete = true;
             ResetTimer();
             phaseTwoComplete = true;
+            ShrinkCloud();
+            transform.position += positionChange;
         }
     }
 
@@ -143,8 +141,7 @@ public class CloudShrink : MonoBehaviour
 
     public void ShrinkCloud()
     {
-        gameObject.transform.localScale += scaleChange;
-        scaleChange = -scaleChange;
+        transform.localScale += scaleChange;
     }
 
 

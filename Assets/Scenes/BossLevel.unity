@@ -235,18 +235,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 46759446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41dfb8692b653224fbd6688801c4b6ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 41eb760d13db29b41bde636c623cbb35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drainRate: 5
-  cloudDrainRate: 10
-  drainRadius: 5
-  plantHealth: 0
   cloudHealth: 150
+  cloudDrainRate: 10
   glowLight: {fileID: 1164459111}
-  drainables: []
-  playerLife: {fileID: 0}
   phaseTimer: 0
+  playerLife: {fileID: 0}
 --- !u!1 &164212745
 GameObject:
   m_ObjectHideFlags: 0

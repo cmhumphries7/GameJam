@@ -11,6 +11,7 @@ public class CamFollow : MonoBehaviour
     public float maxDistance;
     public Camera cam;
     public float yOffset = 5f;
+    public float xOffset;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -20,7 +21,7 @@ public class CamFollow : MonoBehaviour
         camPos.y = transform.position.y;
 
         Vector2 targetPos = new Vector2(0, 0);
-        targetPos.x = target.transform.position.x;
+        targetPos.x = target.transform.position.x + xOffset;
         targetPos.y = target.transform.position.y + yOffset;
 
         float dist = Vector2.Distance(camPos, targetPos);
@@ -28,6 +29,15 @@ public class CamFollow : MonoBehaviour
             //move the camera
             camPos = Vector2.Lerp(camPos, targetPos, speed * Time.deltaTime);
             transform.position = new Vector3(camPos.x, camPos.y, transform.position.z);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.name == "cameraTrigger")
+        {
+            Debug.Log("offset is updated");
+            xOffset = 5f;
         }
     }
 }

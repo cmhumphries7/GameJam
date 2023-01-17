@@ -6,13 +6,19 @@ using UnityEngine.Rendering.Universal;
 public class PlantSource: MonoBehaviour
 {
     [SerializeField] public float drainRate = 5f;
+    [SerializeField] public float cloudDrainRate = 10f;
     [SerializeField] public float drainRadius = 5f;
     [SerializeField] public float plantHealth = 50f;
+    [SerializeField] public float cloudHealth = 150f;
     [SerializeField] public Light2D glowLight;
     public GameObject[] drainables;
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
-    int LayerPlantMask, LayerCloudMask;
+    [SerializeField] float phaseTimer = 0f;
+    float timeToNextPhase = 5f;
+    bool nextPhase = false;
+
+
 
 
     public void Start()
@@ -21,17 +27,12 @@ public class PlantSource: MonoBehaviour
        playerLife = FindObjectOfType<PlayerLife>();
     }
 
-    public void Awake()
-    {
-        int LayerPlantMask = LayerMask.NameToLayer("PlantMask");
-        int LayerCloudMask = LayerMask.NameToLayer("CloudMask");
-    }
-
     public void Update()
     {
         if (lifeMagic != null)
         {
             CheckForPlant();
+            CheckForCloud();
         }
 
         glowLight.intensity = (plantHealth * 2f) / 100f;
@@ -46,7 +47,6 @@ public class PlantSource: MonoBehaviour
     {
 
         lifeMagic = collision.gameObject.GetComponent<LifeMagic>();
-        var layerMask = collision.gameObject.layer;
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -68,7 +68,67 @@ public class PlantSource: MonoBehaviour
         }
     }
 
-    
+    public void CheckForCloud()
+    {
+        PhaseOne();
+        PhaseTwo();
+    }
+
+    public void PhaseOne()
+    {
+        if (lifeMagic.isRequestingLife && cloudHealth > 100)
+        {
+            float timedDrainRate = cloudDrainRate * Time.deltaTime;
+            cloudHealth = cloudHealth - timedDrainRate;
+            playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;          
+        }
+        if (cloudHealth <= 100)
+        {
+            phaseTimer += Time.deltaTime;
+            if (phaseTimer < timeToNextPhase && !nextPhase)
+            {
+                lifeMagic.LockMagic(true);
+            }
+            else
+            {
+                ResetTimer();
+            }
+            
+        }
+    }
+
+    public void PhaseTwo()
+    {
+        if (lifeMagic.isRequestingLife && cloudHealth > 50 && nextPhase)
+        {
+            nextPhase = false;
+            float timedDrainRate = cloudDrainRate * Time.deltaTime;
+            cloudHealth = cloudHealth - timedDrainRate;
+            playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
+            if (cloudHealth <= 50)
+            {
+                phaseTimer += Time.deltaTime;
+                if (phaseTimer < timeToNextPhase && !nextPhase)
+                {
+                    lifeMagic.LockMagic(true);
+                }
+                else
+                {
+                    ResetTimer();
+                }
+            }
+        }
+    }
+
+    public void ResetTimer()
+    {
+        phaseTimer = 0f;
+        Debug.Log("phase timer is " + phaseTimer);
+        lifeMagic.LockMagic(false);
+        nextPhase = true;
+    }
+
+
 
 
 }

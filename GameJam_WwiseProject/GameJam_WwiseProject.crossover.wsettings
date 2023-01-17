@@ -3,6 +3,12 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{8C995240-E7D1-4541-B688-96DB217B0D6B}">
 			<PropertyList>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Desktop\sound folder for ndqa gamejam\Mechanics\"/>
+				<Property Name="Event Action List\{62548DCD-7B27-4F2F-A0F7-74DBF883B889}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{AC875F3A-DE7D-40B2-9325-775ADE94D38D}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{B4010B38-6B1C-4182-B8B3-43DE3B3B60D5}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{CA0DDEF1-1A74-4E14-B816-286D1DD4191B}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{E54405D8-3E86-4187-95FD-43AE08AEECEA}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="EventView\FilterMode2" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
@@ -20,6 +26,10 @@
 				<Property Name="Game Profiler\Voice Monitor\LastBus" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
 				<Property Name="General\LatestLanguage" Type="int32" Value="684519430"/>
 				<Property Name="General\LatestPlatform" Type="string" Value="Mac"/>
+				<Property Name="GenerateSoundBanks\ShowHierarchy" Type="bool" Value="True"/>
+				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value="BvDMKA=="/>
+				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="abqxPkDpuk20zPiCiMLcpacvH/5AC0xKjjXweHxeLAs="/>
+				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value=""/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}"/>
 				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups_v2" Type="string" Value="pjgOramHOUW+4OczYw5MoAEAAAAAAAAA4A4PDAAAAACgdgsMAAAAAICR2wEAAAAA4KStAQAAAAAEkkQAAAAAABANyAsAAAAAcA8PDAAAAAAIAAAAAAAAANjyIQAAAAAAAABZAAAAAAAfAVkAAAAAAAAAWQAAAAAAwKStAQAAAADApK0BAAAAAKjw3AEAAAAAAQAAAB6gwwesQxtBm0bbZ8YYWvABAAAAAAAAAOAODwwAAAAAoHYLDAAAAACAkdsBAAAAAOCkrQEAAAAABJJEAAAAAAAQDcgLAAAAAHAPDwwAAAAACAAAAAAAAADY8iEAAAAAAAAAWQAAAAAAHwFZAAAAAAAAAFkAAAAAAMCkrQEAAAAAwKStAQAAAACo8NwBAAAAAAEAAAA="/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Denial2
   m_EditorClassIdentifier: 
   dialogue:
-  - He made such a big fuss earlier. Something about the Chief releasing something
-    in the old cave, and you being the only one who can stop it.
+  - He made such a big fuss earlier. Said the Chief released something in the old
+    cave, and only you could stop it.
   - Whatever that means.
   responses:
   - responseText: What exactly did the chief do?

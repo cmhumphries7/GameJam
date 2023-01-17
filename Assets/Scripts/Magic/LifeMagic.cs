@@ -44,8 +44,6 @@ public class LifeMagic : MonoBehaviour
                 isGrowingLife = true;
                 anim.SetBool("isPowering", true);
 
-                AkSoundEngine.PostEvent("Mechanic_Plant_Grow", gameObject);
-
                 if (!powerAnimPlaying)
                 {
                     anim.SetTrigger("powerTrigger");

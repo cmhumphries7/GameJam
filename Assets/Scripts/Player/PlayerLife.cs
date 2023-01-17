@@ -8,14 +8,17 @@ using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     [SerializeField] public float lifeForce = 100f;
+    public float maxlifeforce = 100f;
     [SerializeField] public float decayRate = 0.1f;
     public float timedDecayRate;
     [SerializeField] public Light2D glowLight;
+    [SerializeField] public Light2D endLight;
     private GameObject player;
     public PlantSource plantSource;
     public GrowPlant growPlant;
     public GameObject[] drainables;
     public bool isIntroLevel = false;
+    public Color endColor;
 
     void Start()
     {

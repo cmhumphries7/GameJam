@@ -1,6 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	507898685	Mechanic_Plant_Grow			\Mechanic_Plant_Grow\Mechanic_Plant_Grow	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	27571092	Mechanic_Plant_Growing_V1	Y:\Desktop\Game Jam 2023\GameJam\GameJam_WwiseProject\.cache\Windows\SFX\Mechanic_Plant_Growing_V1_045DADD8.wem		\Actor-Mixer Hierarchy\Mechanic_Plant_Grow\Mechanic_Plant_Growing_V1		1722316
-

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Denial7
   m_EditorClassIdentifier: 
   dialogue:
-  - Really? I hope you make it quick then. Whatever this black stuff is, it's starting
-    to make the air feel stuffy.
+  - Really? I hope you make it quick then. Whatever this fog is, it's starting to
+    make the air feel stuffy.
   responses: []

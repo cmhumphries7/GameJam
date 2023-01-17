@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
-    [SerializeField] public float lifeForce = 100f;
+    [SerializeField] public float lifeForce = 200f;
     [SerializeField] public float decayRate = 1f;
     public float timedDecayRate;
     [SerializeField] public Light2D glowLight;

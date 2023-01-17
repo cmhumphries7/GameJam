@@ -96,6 +96,14 @@ public class PlayerMovement : MonoBehaviour
         return isGrounded;
     }
 
+    public void TurnPlayer(string direction)
+    {
+        if (direction == "left")
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        else
+            transform.eulerAngles = new Vector3(0, 0, 0);
+    }
+
 }
 
 

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - "Beats me. I felt some rumblings earlier and now this black stuff has been popping
-    up, but that\u2019s all I know. ANGRY NPC and SAD NPC went up there too, but
-    they haven\u2019t come back down."
+    up, but that\u2019s all I know. "
+  - ANGRY NPC and SAD NPC headed that way too, but they haven't come back yet.
   responses:
   - responseText: Stay here.
     dialogueObject: {fileID: 11400000, guid: b860ca46fe3481c45a5815cb2a5b07a6, type: 2}

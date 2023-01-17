@@ -56,6 +56,15 @@ TagManager:
   - name: Foreground_Interactable
     uniqueID: 1055902341
     locked: 0
+  - name: Ground
+    uniqueID: 884514967
+    locked: 0
   - name: Player
     uniqueID: 4048803929
+    locked: 0
+  - name: Tree
+    uniqueID: 3037461139
+    locked: 0
+  - name: Foreground-close
+    uniqueID: 316600937
     locked: 0

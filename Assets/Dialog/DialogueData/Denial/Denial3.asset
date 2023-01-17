@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Gone? Gone where?
-  - Anyway, he made such a big fuss earlier. Said the Chief releaed something in
-    the old cave, and you being the only one who could stop it.
+  - Anyway, he made such a big fuss earlier. Said the Chief released something in
+    the old cave, and only you could stop it.
   - Whatever that means.
   responses:
   - responseText: What exactly did the chief do?

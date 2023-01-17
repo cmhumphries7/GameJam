@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Denial5
   m_EditorClassIdentifier: 
   dialogue:
-  - Yeah, it all sounded a bit mad if you ask me.
+  - Yeah, it all sounded a bit loony if you ask me.
   - Still, I always wondered what might be in there, considering they banned us from
-    ever even looking at that cave.
+    even looking at that cave.
   responses:
   - responseText: Stay here.
     dialogueObject: {fileID: 11400000, guid: b860ca46fe3481c45a5815cb2a5b07a6, type: 2}

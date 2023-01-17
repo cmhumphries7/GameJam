@@ -580,89 +580,6 @@ Transform:
   m_Father: {fileID: 48971536}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &51681638
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 740981212}
-    m_Modifications:
-    - target: {fileID: 4144330846494275525, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: dialogueObject
-      value: 
-      objectReference: {fileID: 11400000, guid: 1c26e7cb6137e274cb1ada477c339207, type: 2}
-    - target: {fileID: 8231273599857404832, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404832, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -246163367
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 115.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -16.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.9839107
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404834, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_Name
-      value: Chief
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404834, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231273599857404847, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4144330846494275525, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
---- !u!4 &51681639 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8231273599857404833, guid: 5de1cb2cde685994baf00c29ae5729e5, type: 3}
-  m_PrefabInstance: {fileID: 51681638}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &64057323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1875,6 +1792,7 @@ MonoBehaviour:
   maxDistance: 1
   cam: {fileID: 335556377}
   yOffset: 5
+  xOffset: 0
 --- !u!114 &335556381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3071,11 +2989,11 @@ PrefabInstance:
       objectReference: {fileID: 1154103213}
     - target: {fileID: 3738028050768185271, guid: dc34abd1c377bc54b9bae9b4aa638fe5, type: 3}
       propertyPath: toScale.x
-      value: 27.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3738028050768185271, guid: dc34abd1c377bc54b9bae9b4aa638fe5, type: 3}
       propertyPath: toScale.y
-      value: 33
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3738028050768185271, guid: dc34abd1c377bc54b9bae9b4aa638fe5, type: 3}
       propertyPath: tutorialPrompt
@@ -3257,7 +3175,6 @@ Transform:
   - {fileID: 1713313038}
   - {fileID: 1884516275}
   - {fileID: 1890679854}
-  - {fileID: 51681639}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3758,7 +3675,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &838690778
 CircleCollider2D:
@@ -4337,8 +4254,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154103212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.12, y: -18.55, z: 0.25860438}
-  m_LocalScale: {x: 3.9907563, y: 1.2729167, z: 1}
+  m_LocalPosition: {x: -2.6, y: -1.6, z: 0.25860438}
+  m_LocalScale: {x: 2.3878975, y: 0.10902914, z: 0.2792}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 42848963}
@@ -5232,196 +5149,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1273073630
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1273073633}
-  - component: {fileID: 1273073632}
-  - component: {fileID: 1273073631}
-  m_Layer: 0
-  m_Name: ChiefCutscene
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1273073631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273073630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 8a25edaec6cbe6346a4a0fdd568bdf90, type: 2}
-    - {fileID: 11400000, guid: 8c4aa0facf7eac24fa4779a529b36e13, type: 2}
-    - {fileID: 11400000, guid: 4c919b582eab63b46916e602d85c7cfc, type: 2}
-    - {fileID: 11400000, guid: 77a7072fa303a384f9c0bcf1aaa6bc27, type: 2}
-    - {fileID: 11400000, guid: 29dbecd001b6d4141ad2281dc987a0f5, type: 2}
-    - {fileID: 11400000, guid: 4b341717af4239b41b7fe0aabdd66854, type: 2}
-    - {fileID: 11400000, guid: 489108b70e590ab4ba5209ebf406d7eb, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 838690774}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 838690774}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 48971527}
-          m_TargetAssemblyTypeName: LifeMagic, Assembly-CSharp
-          m_MethodName: LockMagic
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 48971528}
-          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-          m_MethodName: LockMovement
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 48971527}
-          m_TargetAssemblyTypeName: LifeMagic, Assembly-CSharp
-          m_MethodName: LockMagic
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 48971528}
-          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-          m_MethodName: TurnPlayer
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: left
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 48971528}
-          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-          m_MethodName: TurnPlayer
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: right
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 48971527}
-          m_TargetAssemblyTypeName: LifeMagic, Assembly-CSharp
-          m_MethodName: LockMagic
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
---- !u!320 &1273073632
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273073630}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 3789038221a7cd048a66fe34a9530d6f, type: 2}
-  m_InitialState: 0
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: -2963100918505364164, guid: 3789038221a7cd048a66fe34a9530d6f, type: 2}
-    value: {fileID: 838690775}
-  - key: {fileID: -5000804767229670557, guid: 3789038221a7cd048a66fe34a9530d6f, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -3718549221486112040, guid: 3789038221a7cd048a66fe34a9530d6f, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -4200308075779408366, guid: 3789038221a7cd048a66fe34a9530d6f, type: 2}
-    value: {fileID: 0}
-  m_ExposedReferences:
-    m_References: []
---- !u!4 &1273073633
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273073630}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 165.48372, y: -1.1100991, z: -1.4159874}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1301527919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6886946235117866456, guid: 19c750c98512fc04da5825e576a2c0cb, type: 3}
@@ -5949,7 +5676,7 @@ Transform:
   m_Children:
   - {fileID: 2124477115}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1473610665
 PrefabInstance:
@@ -7246,7 +6973,7 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 48971527}
           m_TargetAssemblyTypeName: LifeMagic, Assembly-CSharp
           m_MethodName: LockMagic
           m_Mode: 6
@@ -7260,7 +6987,7 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 48971528}
           m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
           m_MethodName: LockMovement
           m_Mode: 6
@@ -7272,7 +6999,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 48971527}
           m_TargetAssemblyTypeName: LifeMagic, Assembly-CSharp
           m_MethodName: LockMagic
           m_Mode: 6
@@ -7286,7 +7013,7 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 48971528}
           m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
           m_MethodName: TurnPlayer
           m_Mode: 5
@@ -7300,7 +7027,7 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 48971528}
           m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
           m_MethodName: TurnPlayer
           m_Mode: 5
@@ -7314,7 +7041,7 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 48971527}
           m_TargetAssemblyTypeName: LifeMagic, Assembly-CSharp
           m_MethodName: LockMagic
           m_Mode: 6
@@ -7378,7 +7105,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1777426872
 PrefabInstance:

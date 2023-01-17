@@ -20,9 +20,13 @@ public class PlantSource: MonoBehaviour
     bool phaseTwoComplete = false;
     bool phaseThreeComplete = false;
     bool phaseComplete;
+    private Vector3 scaleChange, positionChange;
 
-
-
+    private void Awake()
+    {
+        scaleChange = new Vector3(-1.5f, -1.5f, -1.5f);
+        //positionChange = new Vector3(-)
+    }
 
     public void Start()
     {
@@ -96,6 +100,7 @@ public class PlantSource: MonoBehaviour
             if (phaseTimer < timeToNextPhase)
             {
                 lifeMagic.LockMagic(true);
+                ShrinkCloud();
             }
         }
 
@@ -134,7 +139,6 @@ public class PlantSource: MonoBehaviour
             ResetTimer();
             phaseTwoComplete = true;
         }
-
     }
 
     public void PhaseThree()
@@ -150,6 +154,7 @@ public class PlantSource: MonoBehaviour
         {
             phaseThreeComplete = true;
             cloudHealth = 0;
+            Destroy(this.gameObject);
         }
     }
 
@@ -160,6 +165,13 @@ public class PlantSource: MonoBehaviour
         phaseTimer = 0f;
         lifeMagic.LockMagic(false);
     }
+
+    public void ShrinkCloud()
+    {
+        gameObject.transform.localScale += scaleChange;
+        scaleChange = -scaleChange;
+    }
+
 
 
 

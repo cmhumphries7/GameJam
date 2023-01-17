@@ -40,9 +40,9 @@ public class DeathVignetteScript : MonoBehaviour
     private void Update()
     {
         startingCircleSize = playerLife.lifeForce / 4;
+        //the 4 stands for magic
         circlePosition = player.transform.Find("HEAD").position;
         Vector3 sizeChangeVector = (targetCircleSize - circleSize).normalized;
-        //the 4 stands for magic
         Vector3 newCircleSize = (circleSize + sizeChangeVector * startingCircleSize);
         setCircleSize(circlePosition, newCircleSize);
     }
@@ -52,19 +52,19 @@ public class DeathVignetteScript : MonoBehaviour
         centerTransform.localScale = size;
         transform.position = position;
 
-        topTransform.localScale = new Vector3(20, 20);
+        topTransform.localScale = new Vector3(200, 200);
         topTransform.localPosition = new Vector3(0, topTransform.localScale.y * .5f + size.y * .5f);
 
 
-        bottomTransform.localScale = new Vector3(20, 20);
+        bottomTransform.localScale = new Vector3(200, 200);
         bottomTransform.localPosition = new Vector3(0,-topTransform.localScale.y * .5f - size.y * .5f);
 
 
-        leftTransform.localScale = new Vector3(20, size.y);
+        leftTransform.localScale = new Vector3(200, size.y);
         leftTransform.localPosition = new Vector3(-leftTransform.localScale.x * .5f - size.x * .5f, 0f);
 
 
-        rightTransform.localScale = new Vector3(20, size.y);
+        rightTransform.localScale = new Vector3(200, size.y);
         rightTransform.localPosition = new Vector3(+leftTransform.localScale.x * .5f + size.x * .5f, 0f);
     }
 }

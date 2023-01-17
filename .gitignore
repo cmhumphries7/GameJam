@@ -70,10 +70,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-<<<<<<< HEAD
-Assets/Wwise/API/Runtime/Plugins/Windows/x86_64/Profile/AkSoundEngine.dll
-=======
 Assets/Wwise.meta
 Assets/Wwise.meta
 Assets/Wwise/Editor.meta
->>>>>>> 360ac80e5bb6d4f4b794981cc0e3a30451f3040a

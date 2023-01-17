@@ -12,7 +12,6 @@ public class GrowPlantAlt : MonoBehaviour
     [SerializeField] public float timeToGrow = 5f;
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
-    public GameObject[] growables;
     //lerp
     bool isScaling = false;
     public Transform vine;
@@ -24,13 +23,7 @@ public class GrowPlantAlt : MonoBehaviour
     void Start()
     {
         playerLife = FindObjectOfType<PlayerLife>();
-        growables = GameObject.FindGameObjectsWithTag("Growable");
         startScalesize = vine.localScale;
-    }
-
-    public GameObject[] getGrowables()
-    {
-        return growables;
     }
 
 
@@ -65,26 +58,28 @@ public class GrowPlantAlt : MonoBehaviour
                     }
                 }
 
-
+                float multiplierX = toScale.x / (drainRate * timeToGrow * growCost);
+                float xRate = drainRate * timeToGrow * growPlantHealth * multiplierX;
+                float multiplierY = toScale.y / (drainRate * timeToGrow * growCost);
+                float yRate = drainRate * timeToGrow * growPlantHealth * multiplierY;
+                vine.localScale = new Vector3(Mathf.Clamp(startScalesize.x + xRate, 0, toScale.x), Mathf.Clamp(startScalesize.y + yRate, 0, toScale.y), vine.localScale.z);
+                glowLight.intensity = growPlantHealth / 20f;
             }
         }
 
-        float multiplierX = toScale.x / (drainRate * timeToGrow * growCost);
-        float xRate = drainRate * timeToGrow * growPlantHealth * multiplierX;
-        float multiplierY = toScale.y / (drainRate * timeToGrow * growCost);
-        float yRate = drainRate * timeToGrow * growPlantHealth * multiplierY;
-        vine.localScale = new Vector3(Mathf.Clamp(startScalesize.x + xRate, 0, toScale.x), Mathf.Clamp(startScalesize.y + yRate, 0, toScale.y), vine.localScale.z);
-        glowLight.intensity = growPlantHealth / 20f;
+        
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         lifeMagic = collision.gameObject.GetComponent<LifeMagic>();
+
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
         lifeMagic = null;
+
 
     }
 

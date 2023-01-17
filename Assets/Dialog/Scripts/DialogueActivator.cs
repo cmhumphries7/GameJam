@@ -31,14 +31,14 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 
     public void Interact(PlayerDialogue player)
     {
-        foreach (DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
+       /* foreach (DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
         {
             if (responseEvents.DialogueObject == dialogueObject)
             {
                 player.DialogueUI.AddResponseEvents(responseEvents.Events);
                 break;
             }
-        }
+        } */
 
         player.DialogueUI.ShowDialogue(dialogueObject);
     }

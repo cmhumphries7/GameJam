@@ -9,6 +9,23 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
+		<SoundBank Id="507898685" Type="User" Language="SFX" Hash="{A47C90D2-F2B3-4A23-2545-C2740EC71BC8}">
+			<ShortName>Mechanic_Plant_Grow</ShortName>
+			<Path>Mechanic_Plant_Grow.bnk</Path>
+			<Media>
+				<File Id="27571092" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mechanic_Plant_Growing_V1.wav</ShortName>
+					<CachePath>SFX/Mechanic_Plant_Growing_V1_045DADD8.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="507898685" Name="Mechanic_Plant_Grow" DurationType="OneShot" DurationMin="9.763158" DurationMax="9.763158">
+					<MediaRefs>
+						<MediaRef Id="27571092"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -21,6 +38,15 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<SwitchGroups>
+				<SwitchGroup Id="2835351336" Name="GroundType">
+					<Switches>
+						<Switch Id="2185786256" Name="Gravel"/>
+						<Switch Id="2195636714" Name="Dirt"/>
+						<Switch Id="4248645337" Name="Grass"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 		<SoundBank Id="2014706742" Type="User" Language="SFX" Hash="{51AC3094-C3C9-A62E-63BE-27D45C42A9DB}">
 			<ShortName>Main_Sound</ShortName>
@@ -39,6 +65,202 @@
 				</Event>
 			</Events>
 		</SoundBank>
+		<SoundBank Id="4083419649" Type="User" Language="SFX" Hash="{887A6F71-B005-1C98-AB99-A752E7E21B15}">
+			<ShortName>Player_Sounds</ShortName>
+			<Path>Player_Sounds.bnk</Path>
+			<Media>
+				<File Id="44498816" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Grass_Footsteps_Bucket\Footsteps_Grass_P1_N7_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Grass_Footsteps_Bucket/Footsteps_Grass_P1_N7_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="51911586" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Dirt_Footsteps_Bucket\Footsteps_Dirt_P2_N3_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Dirt_Footsteps_Bucket/Footsteps_Dirt_P2_N3_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="61286658" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Grass_Footsteps_Bucket\Footsteps_Grass_P1_N4_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Grass_Footsteps_Bucket/Footsteps_Grass_P1_N4_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="66208316" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N1_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N1_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="69650913" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N5_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N5_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="94179872" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Dirt_Footsteps_Bucket\Footsteps_Dirt_P2_N5_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Dirt_Footsteps_Bucket/Footsteps_Dirt_P2_N5_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="103321807" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N13_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N13_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="155757934" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Dirt_Footsteps_Bucket\Footsteps_Dirt_P2_N7_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Dirt_Footsteps_Bucket/Footsteps_Dirt_P2_N7_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="187015538" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Grass_Footsteps_Bucket\Footsteps_Grass_P1_N3_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Grass_Footsteps_Bucket/Footsteps_Grass_P1_N3_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="202106208" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N4_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N4_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="204539204" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Grass_Footsteps_Bucket\Footsteps_Grass_P1_N6_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Grass_Footsteps_Bucket/Footsteps_Grass_P1_N6_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="245979255" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Dirt_Footsteps_Bucket\Footsteps_Dirt_P2_N8_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Dirt_Footsteps_Bucket/Footsteps_Dirt_P2_N8_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="252600169" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Grass_Footsteps_Bucket\Footsteps_Grass_P1_N1_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Grass_Footsteps_Bucket/Footsteps_Grass_P1_N1_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="291693670" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Grass_Footsteps_Bucket\Footsteps_Grass_P1_N2_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Grass_Footsteps_Bucket/Footsteps_Grass_P1_N2_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="300744156" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N6_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N6_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="317262157" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N7_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N7_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="333839277" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N2_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N2_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="394487447" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N10_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N10_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="538489270" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Grass_Footsteps_Bucket\Footsteps_Grass_P1_N11_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Grass_Footsteps_Bucket/Footsteps_Grass_P1_N11_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="547271034" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Dirt_Footsteps_Bucket\Footsteps_Dirt_P2_N4_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Dirt_Footsteps_Bucket/Footsteps_Dirt_P2_N4_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="558765192" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N11_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N11_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="571120569" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N12_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N12_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="582048648" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Grass_Footsteps_Bucket\Footsteps_Grass_P1_N8_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Grass_Footsteps_Bucket/Footsteps_Grass_P1_N8_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="659404262" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Dirt_Footsteps_Bucket\Footsteps_Dirt_P2_N2_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Dirt_Footsteps_Bucket/Footsteps_Dirt_P2_N2_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="661983376" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Dirt_Footsteps_Bucket\Footsteps_Dirt_P2_N1_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Dirt_Footsteps_Bucket/Footsteps_Dirt_P2_N1_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="664900904" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N3_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N3_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="685022320" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Grass_Footsteps_Bucket\Footsteps_Grass_P1_N5_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Grass_Footsteps_Bucket/Footsteps_Grass_P1_N5_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="721301525" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Grass_Footsteps_Bucket\Footsteps_Grass_P1_N10_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Grass_Footsteps_Bucket/Footsteps_Grass_P1_N10_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="724163150" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N8_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N8_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="782381424" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Dirt_Footsteps_Bucket\Footsteps_Dirt_P2_N6_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Dirt_Footsteps_Bucket/Footsteps_Dirt_P2_N6_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="784020707" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Gravel_Footsteps_Bucket\Footsteps_Gravel_P3_N9_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Gravel_Footsteps_Bucket/Footsteps_Gravel_P3_N9_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="931425743" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footstep Buckets\Grass_Footsteps_Bucket\Footsteps_Grass_P1_N9_1.wav</ShortName>
+					<CachePath>SFX/Footstep Buckets/Grass_Footsteps_Bucket/Footsteps_Grass_P1_N9_1_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="4083419649" Name="Player_Sounds" DurationType="OneShot" DurationMin="0.74303854" DurationMax="1.4860771">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2835351336" Id="4248645337"/>
+							<MediaRefs>
+								<MediaRef Id="44498816"/>
+								<MediaRef Id="61286658"/>
+								<MediaRef Id="187015538"/>
+								<MediaRef Id="204539204"/>
+								<MediaRef Id="252600169"/>
+								<MediaRef Id="291693670"/>
+								<MediaRef Id="538489270"/>
+								<MediaRef Id="582048648"/>
+								<MediaRef Id="685022320"/>
+								<MediaRef Id="721301525"/>
+								<MediaRef Id="931425743"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2835351336" Id="2195636714"/>
+							<MediaRefs>
+								<MediaRef Id="51911586"/>
+								<MediaRef Id="94179872"/>
+								<MediaRef Id="155757934"/>
+								<MediaRef Id="245979255"/>
+								<MediaRef Id="547271034"/>
+								<MediaRef Id="659404262"/>
+								<MediaRef Id="661983376"/>
+								<MediaRef Id="782381424"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2835351336" Id="2185786256"/>
+							<MediaRefs>
+								<MediaRef Id="66208316"/>
+								<MediaRef Id="69650913"/>
+								<MediaRef Id="103321807"/>
+								<MediaRef Id="202106208"/>
+								<MediaRef Id="300744156"/>
+								<MediaRef Id="317262157"/>
+								<MediaRef Id="333839277"/>
+								<MediaRef Id="394487447"/>
+								<MediaRef Id="558765192"/>
+								<MediaRef Id="571120569"/>
+								<MediaRef Id="664900904"/>
+								<MediaRef Id="724163150"/>
+								<MediaRef Id="784020707"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</Events>
+			<SwitchGroups>
+				<SwitchGroup Id="2835351336" Name="GroundType">
+					<Switches>
+						<Switch Id="2185786256" Name="Gravel"/>
+						<Switch Id="2195636714" Name="Dirt"/>
+						<Switch Id="4248645337" Name="Grass"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C023AEC6-7CAE-6E4D-D19E-3F3B6A5EA01E}</FileHash>
+	<FileHash>{06C4762C-8496-A634-5CD3-D833F573D23E}</FileHash>
 </SoundBanksInfo>

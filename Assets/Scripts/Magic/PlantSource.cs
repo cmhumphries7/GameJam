@@ -16,7 +16,10 @@ public class PlantSource: MonoBehaviour
     private LifeMagic lifeMagic;
     [SerializeField] float phaseTimer = 0f;
     float timeToNextPhase = 5f;
-    bool nextPhase = false;
+    bool phaseOneComplete = false;
+    bool phaseTwoComplete = false;
+    bool phaseThreeComplete = false;
+    bool phaseComplete;
 
 
 
@@ -72,60 +75,90 @@ public class PlantSource: MonoBehaviour
     {
         PhaseOne();
         PhaseTwo();
+        PhaseThree();
     }
 
+    #region Cloud Drain Phases
     public void PhaseOne()
     {
-        if (lifeMagic.isRequestingLife && cloudHealth > 100)
-        {
+        if (lifeMagic.isRequestingLife && cloudHealth > 100 && !phaseOneComplete)
+        {            
             float timedDrainRate = cloudDrainRate * Time.deltaTime;
             cloudHealth = cloudHealth - timedDrainRate;
-            playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;          
+            playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
+            phaseComplete = false;
         }
-        if (cloudHealth <= 100)
+
+        if (cloudHealth <= 100 && !phaseComplete && !phaseOneComplete)
         {
+            Debug.Log("Entering first timer");
             phaseTimer += Time.deltaTime;
-            if (phaseTimer < timeToNextPhase && !nextPhase)
+            if (phaseTimer < timeToNextPhase)
             {
                 lifeMagic.LockMagic(true);
             }
-            else
-            {
-                ResetTimer();
-            }
-            
+        }
+
+        if (phaseTimer > timeToNextPhase && !phaseOneComplete)
+        {
+            phaseComplete = true;
+            ResetTimer();
+            phaseOneComplete = true;
         }
     }
 
     public void PhaseTwo()
     {
-        if (lifeMagic.isRequestingLife && cloudHealth > 50 && nextPhase)
+        if (lifeMagic.isRequestingLife && cloudHealth < 101 && phaseOneComplete)
         {
-            nextPhase = false;
+            Debug.Log("Entering phase 2");
             float timedDrainRate = cloudDrainRate * Time.deltaTime;
             cloudHealth = cloudHealth - timedDrainRate;
             playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
-            if (cloudHealth <= 50)
+            phaseComplete = false;
+        }
+
+        if (cloudHealth <= 50 && !phaseComplete && !phaseTwoComplete)
+        {
+            Debug.Log("Entering second timer");
+            phaseTimer += Time.deltaTime;
+            if (phaseTimer < timeToNextPhase)
             {
-                phaseTimer += Time.deltaTime;
-                if (phaseTimer < timeToNextPhase && !nextPhase)
-                {
-                    lifeMagic.LockMagic(true);
-                }
-                else
-                {
-                    ResetTimer();
-                }
+                lifeMagic.LockMagic(true);
             }
         }
+
+        if (phaseTimer > timeToNextPhase && !phaseTwoComplete)
+        {
+            phaseComplete = true;
+            ResetTimer();
+            phaseTwoComplete = true;
+        }
+
     }
+
+    public void PhaseThree()
+    {
+        if (lifeMagic.isRequestingLife && cloudHealth < 51 && phaseTwoComplete)
+        {
+            Debug.Log("Entering phase 3");
+            float timedDrainRate = cloudDrainRate * Time.deltaTime;
+            cloudHealth = cloudHealth - timedDrainRate;
+            playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;       
+        }
+        if (cloudHealth <= 0 )
+        {
+            phaseThreeComplete = true;
+            cloudHealth = 0;
+        }
+    }
+
+    #endregion
 
     public void ResetTimer()
     {
         phaseTimer = 0f;
-        Debug.Log("phase timer is " + phaseTimer);
         lifeMagic.LockMagic(false);
-        nextPhase = true;
     }
 
 

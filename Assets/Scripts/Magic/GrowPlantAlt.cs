@@ -25,7 +25,7 @@ public class GrowPlantAlt : MonoBehaviour
     void Start()
     {
         playerLife = FindObjectOfType<PlayerLife>();
-        startScalesize = vine.localScale;
+        if (vine != null) startScalesize = vine.localScale;
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -70,7 +70,10 @@ public class GrowPlantAlt : MonoBehaviour
                 float xRate = drainRate * timeToGrow * growPlantHealth * multiplierX;
                 float multiplierY = toScale.y / (drainRate * timeToGrow * growCost);
                 float yRate = drainRate * timeToGrow * growPlantHealth * multiplierY;
-                vine.localScale = new Vector3(Mathf.Clamp(startScalesize.x + xRate, 0, toScale.x), Mathf.Clamp(startScalesize.y + yRate, 0, toScale.y), vine.localScale.z);
+                if (vine != null)
+                {
+                    vine.localScale = new Vector3(Mathf.Clamp(startScalesize.x + xRate, 0, toScale.x), Mathf.Clamp(startScalesize.y + yRate, 0, toScale.y), vine.localScale.z);
+                }
                 glowLight.intensity = growPlantHealth / 20f;
             }
         }

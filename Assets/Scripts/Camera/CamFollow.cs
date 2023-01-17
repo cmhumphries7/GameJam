@@ -32,13 +32,5 @@ public class CamFollow : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.name == "cameraTrigger")
-        {
-            Debug.Log("offset is updated");
-            xOffset = 5f;
-        }
-    }
 }
 

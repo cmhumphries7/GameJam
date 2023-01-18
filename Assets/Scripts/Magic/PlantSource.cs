@@ -13,6 +13,7 @@ public class PlantSource: MonoBehaviour
     public GameObject[] drainables;
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
+    [SerializeField] private GameObject tutorialPrompt;
 
 
     public void Start()
@@ -55,6 +56,10 @@ public class PlantSource: MonoBehaviour
     {
         if (lifeMagic.isRequestingLife && plantHealth > 0)
         {
+            if (tutorialPrompt != null)
+            {
+                tutorialPrompt.SetActive(false);
+            }
             float timedDrainRate = drainRate * Time.deltaTime;
             plantHealth = plantHealth - timedDrainRate;
             playerLife.lifeForce = Mathf.Clamp(playerLife.lifeForce + timedDrainRate, 0, playerLife.maxlifeforce);

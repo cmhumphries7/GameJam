@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 06359082140064042bd7288a911178d6
+guid: fe5a1ec6e17379a449ed8843ab27dac7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,13 +42,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 1.0000001, y: 0.4987478}
-  spritePixelsToUnits: 256
-  spriteBorder: {x: 0, y: 0, z: 134, w: 0}
+  alignment: 5
+  spritePivot: {x: 1, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -115,70 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Vine_
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 1969
-        width: 24
-        height: 6
-      alignment: 9
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 424223d81388bc7459ab8e31665f34a9
-      internalID: 1839428162
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vine_1
-      rect:
-        serializedVersion: 2
-        x: 116
-        y: 1907
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7c490c7a5f6f6242b934d53d9937864
-      internalID: 1506661738
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vine_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1020
-        width: 3000
-        height: 864
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc697a5a6f888a94fa6da37ef74013b7
-      internalID: 1822772054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -189,10 +126,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Vine_1: 1506661738
-      Vine_: 1839428162
-      Vine_2: 1822772054
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

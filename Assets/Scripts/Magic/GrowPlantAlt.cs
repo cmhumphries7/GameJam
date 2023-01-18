@@ -74,7 +74,10 @@ public class GrowPlantAlt : MonoBehaviour
                 {
                     vine.localScale = new Vector3(Mathf.Clamp(startScalesize.x + xRate, 0, toScale.x), Mathf.Clamp(startScalesize.y + yRate, 0, toScale.y), vine.localScale.z);
                 }
-                glowLight.intensity = growPlantHealth / 20f;
+                if (glowLight != null)
+                {
+                    glowLight.intensity = growPlantHealth / 20f;
+                }
             }
         }
 

@@ -3859,6 +3859,7 @@ MonoBehaviour:
   glowLight: {fileID: 0}
   drainables: []
   playerLife: {fileID: 0}
+  tutorialPrompt: {fileID: 0}
 --- !u!1 &845320182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8959771313360585164, guid: dc34abd1c377bc54b9bae9b4aa638fe5, type: 3}
@@ -6015,6 +6016,7 @@ MonoBehaviour:
   glowLight: {fileID: 0}
   drainables: []
   playerLife: {fileID: 0}
+  tutorialPrompt: {fileID: 0}
 --- !u!95 &1471684354
 Animator:
   serializedVersion: 5
@@ -9581,6 +9583,14 @@ PrefabInstance:
     - target: {fileID: 6934185037180721933, guid: 4e0d9ad97c64c6a4d9365b278aded41c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934185037362315176, guid: 4e0d9ad97c64c6a4d9365b278aded41c, type: 3}
+      propertyPath: m_Size.y
+      value: 7.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934185037362315176, guid: 4e0d9ad97c64c6a4d9365b278aded41c, type: 3}
+      propertyPath: m_Offset.y
+      value: -6.12
       objectReference: {fileID: 0}
     - target: {fileID: 6934185037362315177, guid: 4e0d9ad97c64c6a4d9365b278aded41c, type: 3}
       propertyPath: m_SortingOrder

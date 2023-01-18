@@ -59,6 +59,9 @@ TagManager:
   - name: Ground
     uniqueID: 884514967
     locked: 0
+  - name: DeathSpirit
+    uniqueID: 877344341
+    locked: 0
   - name: Player
     uniqueID: 4048803929
     locked: 0

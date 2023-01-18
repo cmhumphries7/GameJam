@@ -8,8 +8,9 @@ public class CloudShrink : MonoBehaviour
     [SerializeField] public float cloudHealth = 150f;
     [SerializeField] public float cloudDrainRate = 10f;
     [SerializeField] public Light2D glowLight;
+    [SerializeField] public GameObject darknessCircle;
     [SerializeField] float phaseTimer = 0f;
-    float timeToNextPhase = 5f;
+    float timeToNextPhase = 3f;
     bool phaseOneComplete = false;
     bool phaseTwoComplete = false;
     bool phaseThreeComplete = false;
@@ -17,6 +18,8 @@ public class CloudShrink : MonoBehaviour
     private Vector3 scaleChange, positionChange;
     private LifeMagic lifeMagic;
     public PlayerLife playerLife;
+    private Vector3 startingSize;
+    private Vector3 darknessCircleSize;
 
     private void Awake()
     {
@@ -27,6 +30,8 @@ public class CloudShrink : MonoBehaviour
     public void Start()
     {
         playerLife = FindObjectOfType<PlayerLife>();
+        startingSize = transform.localScale;
+        darknessCircleSize = darknessCircle.transform.localScale;
     }
 
     public void Update()
@@ -37,7 +42,9 @@ public class CloudShrink : MonoBehaviour
             PhaseTwo();
             PhaseThree();
         }
-        glowLight.intensity = (cloudHealth * 2f) / 100f;
+        //glowLight.intensity = (cloudHealth * 2f) / 100f;
+        darknessCircle.transform.localScale = darknessCircleSize;
+        transform.localScale = new Vector3(startingSize.x * cloudHealth / 150f + 2, startingSize.y * cloudHealth / 150f + 2, transform.localScale.z);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -55,15 +62,16 @@ public class CloudShrink : MonoBehaviour
     #region Cloud Drain Phases
     public void PhaseOne()
     {
-        if (lifeMagic.isRequestingLife && cloudHealth > 100 && !phaseOneComplete)
+        if (lifeMagic.isRequestingLife && cloudHealth > 130 && !phaseOneComplete)
         {
             float timedDrainRate = cloudDrainRate * Time.deltaTime;
             cloudHealth = cloudHealth - timedDrainRate;
+            darknessCircleSize = new Vector3(darknessCircleSize.x + timedDrainRate * 3.3f, darknessCircleSize.y + timedDrainRate * 3.3f, 1);
             playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
             phaseComplete = false;
         }
 
-        if (cloudHealth <= 100 && !phaseComplete && !phaseOneComplete)
+        if (cloudHealth <= 130 && !phaseComplete && !phaseOneComplete)
         {
             Debug.Log("Entering first timer");
 
@@ -79,7 +87,7 @@ public class CloudShrink : MonoBehaviour
             phaseComplete = true;
             ResetTimer();
             phaseOneComplete = true;
-            ShrinkCloud();
+            ShrinkCloud(100);
         }
     }
 
@@ -90,11 +98,12 @@ public class CloudShrink : MonoBehaviour
             Debug.Log("Entering phase 2");
             float timedDrainRate = cloudDrainRate * Time.deltaTime;
             cloudHealth = cloudHealth - timedDrainRate;
+            darknessCircleSize = new Vector3(darknessCircleSize.x + timedDrainRate * 3.3f, darknessCircleSize.y + timedDrainRate * 3.3f, 1);
             playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
             phaseComplete = false;
         }
 
-        if (cloudHealth <= 50 && !phaseComplete && !phaseTwoComplete)
+        if (cloudHealth <= 80 && !phaseComplete && !phaseTwoComplete)
         {
             Debug.Log("Entering second timer");
             phaseTimer += Time.deltaTime;
@@ -109,7 +118,7 @@ public class CloudShrink : MonoBehaviour
             phaseComplete = true;
             ResetTimer();
             phaseTwoComplete = true;
-            ShrinkCloud();
+            ShrinkCloud(50);
             transform.position += positionChange;
         }
     }
@@ -121,9 +130,10 @@ public class CloudShrink : MonoBehaviour
             Debug.Log("Entering phase 3");
             float timedDrainRate = cloudDrainRate * Time.deltaTime;
             cloudHealth = cloudHealth - timedDrainRate;
+            darknessCircleSize = new Vector3(darknessCircleSize.x + timedDrainRate * 3.3f, darknessCircleSize.y + timedDrainRate * 3.3f, 1);
             playerLife.lifeForce = playerLife.lifeForce + timedDrainRate;
         }
-        if (cloudHealth <= 0)
+        if (cloudHealth <= 30)
         {
             phaseThreeComplete = true;
             cloudHealth = 0;
@@ -139,9 +149,10 @@ public class CloudShrink : MonoBehaviour
         lifeMagic.LockMagic(false);
     }
 
-    public void ShrinkCloud()
+    public void ShrinkCloud(float health)
     {
-        transform.localScale += scaleChange;
+       // transform.localScale += scaleChange;
+       cloudHealth = health;
     }
 
 

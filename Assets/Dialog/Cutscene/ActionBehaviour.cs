@@ -67,6 +67,20 @@ public class ActionBehavior : PlayableBehaviour
             
             
         }
+
+        if (Input.GetKey(KeyCode.E) && scenario == 2)
+        {
+            count += Time.deltaTime;
+            if (count >= 2f)
+            {
+                director.playableGraph.GetRootPlayable(0).SetSpeed(1d);
+                count = 0;
+                //player.GetComponent<LifeMagic>().HoldDrainingAnim(true);
+                player.GetComponent<LifeMagic>().magicLocked = true;
+            }
+
+
+        }
     }
 
 

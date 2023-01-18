@@ -74,6 +74,26 @@ public class LifeMagic : MonoBehaviour
         }
 
     }
+//used for final cutscene
+    public void HoldDrainingAnim(bool hold)
+    {
+        if (hold == true)
+        {
+            anim.SetBool("isDraining", true);
+            if (!drainAnimPlaying)
+            {
+                anim.SetTrigger("drainTrigger");
+                drainAnimPlaying = true;
+            }
+        }
+        else
+        {
+            isRequestingLife = false;
+            anim.SetBool("isDraining", false);
+            drainAnimPlaying = false;
+        }
+        
+    }
 
         
 }

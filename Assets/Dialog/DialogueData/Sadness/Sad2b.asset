@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Oh it's awful. Absolutely awful. The Chief, he's... he's let it out. I tried
-    to talk to him but he wouldn't listen. It walks free, and it's coming for us
-    all.
+    to talk to him but he wouldn't listen. Death walks free, and it's coming for
+    us all.
   responses:
-  - responseText: What walks free?
+  - responseText: Death?
     dialogueObject: {fileID: 11400000, guid: aa8b190dfe0ddb344af0170028a5c005, type: 2}

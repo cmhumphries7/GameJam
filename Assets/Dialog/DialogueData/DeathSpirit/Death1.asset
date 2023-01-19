@@ -10,13 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e80e7fef8464b3540aa057080e5b2a82, type: 3}
-  m_Name: Sad2a
+  m_Name: Death1
   m_EditorClassIdentifier: 
   dialogue:
-  - He said you would. He's said a great many things, and I have always listened.
-    Until now.
-  - You see the Chief, he's... he's let it out. Death walks free, and it's coming
-    for us all.
+  - Krrraghhhh
   responses:
-  - responseText: Death?
-    dialogueObject: {fileID: 11400000, guid: aa8b190dfe0ddb344af0170028a5c005, type: 2}
+  - responseText: Death, we finally meet.
+    dialogueObject: {fileID: 11400000, guid: ff96f44614fdb8f439c1b81a4b33e227, type: 2}

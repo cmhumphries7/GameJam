@@ -822,7 +822,7 @@ MonoBehaviour:
   m_Name: DialogueClip
   m_EditorClassIdentifier: 
   template:
-    dialogueObject: {fileID: 0}
+    dialogueObject: {fileID: 11400000, guid: 6b1c94ebf825db644abc76046b7a06ad, type: 2}
 --- !u!114 &-1887882314974029370
 MonoBehaviour:
   m_ObjectHideFlags: 1

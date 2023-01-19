@@ -1830,6 +1830,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &868484387 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8900539883288933960, guid: e79a327166bd57c4a9fba0d0a932f0f8, type: 3}
+  m_PrefabInstance: {fileID: 1532858745}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb91f513007e3ef43a8fffde112b447e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &869890130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3322,6 +3333,10 @@ PrefabInstance:
       propertyPath: growDrainAudio
       value: 
       objectReference: {fileID: 1547105597}
+    - target: {fileID: -8451332327766306613, guid: a5950bafc74883844b5b4f7943ac5d36, type: 3}
+      propertyPath: dialogueUI
+      value: 
+      objectReference: {fileID: 868484387}
     - target: {fileID: 128299789791284709, guid: a5950bafc74883844b5b4f7943ac5d36, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.11146453

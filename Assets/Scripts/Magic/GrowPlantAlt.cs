@@ -11,6 +11,8 @@ public class GrowPlantAlt : MonoBehaviour
     [SerializeField] public Light2D glowLight;
     [SerializeField] public float drainRate = 5f;
     [SerializeField] public float timeToGrow = 5f;
+    [SerializeField] public AudioClip growClip;
+    [SerializeField] public AudioClip drainClip;
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
     //lerp
@@ -35,6 +37,7 @@ public class GrowPlantAlt : MonoBehaviour
         if (lifeMagic != null && growRoutine == null)
         {
             //Debug.Log("Checking for life magic");
+
             if (playerLife.lifeForce >= growCost)
             {
 
@@ -64,6 +67,7 @@ public class GrowPlantAlt : MonoBehaviour
                     {
                         growPlantHealth = 0;
                     }
+                    
                 }
 
                 float multiplierX = toScale.x / (drainRate * timeToGrow * growCost);
@@ -86,15 +90,38 @@ public class GrowPlantAlt : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        lifeMagic = collision.gameObject.GetComponent<LifeMagic>();
+        if (collision.gameObject.tag == "Player")
+        {
+            lifeMagic = collision.gameObject.GetComponent<LifeMagic>();
+            lifeMagic.growAudio = growClip;
+            lifeMagic.drainAudio = drainClip;
+        }
 
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        lifeMagic = null;
+        if (collision.gameObject.tag == "Player")
+        {
+            lifeMagic.growAudio = null;
+            lifeMagic.drainAudio = null;
+            lifeMagic = null;
+        }
+    }
 
-
+    private void OnTriggerStay2D(Collider2D other) 
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if (growPlantHealth >= 0)
+            {
+                lifeMagic.canDrain = true;
+            }
+            else
+            {
+                lifeMagic.canDrain = false;
+            }
+        }
     }
 
     IEnumerator scaleOverTime(Transform vine, float duration)

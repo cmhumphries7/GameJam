@@ -11,6 +11,10 @@ public class LifeMagic : MonoBehaviour
     private bool powerAnimPlaying = false;
     private PlayerMovement playerMovement;
     public bool magicLocked = false;
+    [SerializeField] public AudioSource growDrainAudio;
+    public AudioClip growAudio;
+    public AudioClip drainAudio;
+    public bool canDrain = true;
 
     private void Start()
     {
@@ -28,6 +32,10 @@ public class LifeMagic : MonoBehaviour
                 if (!drainAnimPlaying)
                 {
                     anim.SetTrigger("drainTrigger");
+                    if (canDrain && drainAudio != null)
+                    {
+                        growDrainAudio.PlayOneShot(drainAudio);
+                    }
                     drainAnimPlaying = true;
                 }
             }
@@ -35,6 +43,10 @@ public class LifeMagic : MonoBehaviour
             {
                 isRequestingLife = false;
                 anim.SetBool("isDraining", false);
+                if (drainAnimPlaying)
+                {
+                    growDrainAudio.Stop();
+                }
                 drainAnimPlaying = false;
             }
 
@@ -47,6 +59,10 @@ public class LifeMagic : MonoBehaviour
                 if (!powerAnimPlaying)
                 {
                     anim.SetTrigger("powerTrigger");
+                    if (growAudio != null)
+                    {
+                        growDrainAudio.PlayOneShot(growAudio);
+                    }
                     powerAnimPlaying = true;
                 }
 
@@ -55,6 +71,10 @@ public class LifeMagic : MonoBehaviour
             {
                 isGrowingLife = false;
                 anim.SetBool("isPowering", false);
+                if (powerAnimPlaying)
+                {
+                    growDrainAudio.Stop();
+                }
                 powerAnimPlaying = false;
             }
         }
@@ -71,6 +91,7 @@ public class LifeMagic : MonoBehaviour
             isGrowingLife = false;
             anim.SetBool("isPowering", false);
             powerAnimPlaying = false;
+            growDrainAudio.Stop();
         }
 
     }

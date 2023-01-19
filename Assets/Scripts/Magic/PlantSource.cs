@@ -14,6 +14,7 @@ public class PlantSource: MonoBehaviour
     public PlayerLife playerLife;
     private LifeMagic lifeMagic;
     [SerializeField] private GameObject tutorialPrompt;
+    [SerializeField] public AudioClip drainClip;
 
 
     public void Start()
@@ -43,13 +44,23 @@ public class PlantSource: MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-
         lifeMagic = collision.gameObject.GetComponent<LifeMagic>();
+        lifeMagic.drainAudio = drainClip;
+        if (plantHealth <= 0)
+        {
+            lifeMagic.canDrain = false;
+        }
+        else
+        {
+            lifeMagic.canDrain = true;
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
+        lifeMagic.drainAudio = null;
         lifeMagic = null;
+        
     }
 
     public void CheckForPlant()

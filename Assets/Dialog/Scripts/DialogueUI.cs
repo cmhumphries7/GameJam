@@ -15,6 +15,9 @@ public class DialogueUI : MonoBehaviour
     private TypewriterEffect typerwriterEffect;
     [SerializeField] PlayerMovement player;
     [SerializeField] LifeMagic playerMagic;
+    [SerializeField] AudioSource dialogueAudio;
+    [SerializeField] AudioClip dialogueClip;
+
 
     private void Start()
     {
@@ -30,6 +33,7 @@ public class DialogueUI : MonoBehaviour
     {
         IsOpen = true;
         dialogueBox.SetActive(true);
+        dialogueAudio.PlayOneShot(dialogueClip);
         StartCoroutine(StepThroughDialogue(dialogueObject));
     }
 

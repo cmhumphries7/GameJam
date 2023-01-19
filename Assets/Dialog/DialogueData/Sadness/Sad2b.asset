@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Sad2b
   m_EditorClassIdentifier: 
   dialogue:
-  - Oh it's awful. Absolutely awful. The Chief, he... he let it out. I tried to talk
-    to him but he wouldn't listen. It walks free, and is coming for us all.
+  - Oh it's awful. Absolutely awful. The Chief, he's... he's let it out. I tried
+    to talk to him but he wouldn't listen. It walks free, and it's coming for us
+    all.
   responses:
-  - responseText: What do you mean?
+  - responseText: What walks free?
     dialogueObject: {fileID: 11400000, guid: aa8b190dfe0ddb344af0170028a5c005, type: 2}

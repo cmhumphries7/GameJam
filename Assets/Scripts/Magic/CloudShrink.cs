@@ -10,6 +10,7 @@ public class CloudShrink : MonoBehaviour
     [SerializeField] public Light2D glowLight;
     [SerializeField] public GameObject darknessCircle;
     [SerializeField] float phaseTimer = 0f;
+    [SerializeField] AudioClip drainAudio;
     float timeToNextPhase = 3f;
     bool phaseOneComplete = false;
     bool phaseTwoComplete = false;
@@ -51,10 +52,20 @@ public class CloudShrink : MonoBehaviour
     {
 
         lifeMagic = collision.gameObject.GetComponent<LifeMagic>();
+        lifeMagic.drainAudio = drainAudio;
+        if (cloudHealth <= 0)
+        {
+            lifeMagic.canDrain = false;
+        }
+        else
+        {
+            lifeMagic.canDrain = true;
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
+        lifeMagic.drainAudio = null;
         lifeMagic = null;
     }
 

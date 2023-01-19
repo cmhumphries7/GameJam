@@ -481,7 +481,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1897,7 +1897,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 99c4ac9bdeba211458253db95d7ef084, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10166,6 +10166,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathRegion
       objectReference: {fileID: 0}
+    - target: {fileID: 6608379067893571352, guid: 1e2d058f71c3bff42b0d0f5d1e13db0c, type: 3}
+      propertyPath: FadeInOut
+      value: 
+      objectReference: {fileID: 222251596}
+    - target: {fileID: 6608379067893571352, guid: 1e2d058f71c3bff42b0d0f5d1e13db0c, type: 3}
+      propertyPath: deathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cada6af69558da64ba6d1b3c91aac502, type: 3}
+    - target: {fileID: 6608379067893571352, guid: 1e2d058f71c3bff42b0d0f5d1e13db0c, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 48971544}
     - target: {fileID: 6608379067893571353, guid: 1e2d058f71c3bff42b0d0f5d1e13db0c, type: 3}
       propertyPath: m_Color.a
       value: 0

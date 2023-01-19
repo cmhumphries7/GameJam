@@ -18,6 +18,9 @@ public class PlayerLife : MonoBehaviour
     public GrowPlant growPlant;
     public bool isIntroLevel = false;
     public Color endColor;
+    [SerializeField] Animator FadeInOut;
+    public AudioSource audioSource;
+    [SerializeField] public AudioClip deathClip;
 
     void Start()
     {
@@ -61,8 +64,23 @@ void Update()
         //Debug.Log("life force is zero");
         if (lifeForce <= 0 )
         {
-            SceneManager.LoadScene("DeathScene");
+            audioSource.PlayOneShot(deathClip);
+            FadeInOut.SetTrigger("FadeOut");
+            StartCoroutine(WaitFadeComplete());
         }
+
+        
+    }
+
+    public void OnFadeComplete()
+    {
+        SceneManager.LoadScene("DeathScene");
+    }
+
+    IEnumerator WaitFadeComplete()
+    {
+        yield return new WaitForSeconds(1);
+        OnFadeComplete();
     }
 
     #region findDrainable

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Death3
   m_EditorClassIdentifier: 
   dialogue:
-  - Ryuuughhh
+  - Ryuuughhh...
   responses:
   - responseText: Indeed. It's time.
     dialogueObject: {fileID: 0}

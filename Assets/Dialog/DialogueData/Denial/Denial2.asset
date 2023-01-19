@@ -17,7 +17,7 @@ MonoBehaviour:
     cave, and only you could stop it.
   - Whatever that means.
   responses:
-  - responseText: What exactly did the chief do?
+  - responseText: What exactly did the Chief do?
     dialogueObject: {fileID: 11400000, guid: 7ae9f87b87669b341ad668a6a8cc4f5f, type: 2}
   - responseText: Releasing something?
     dialogueObject: {fileID: 11400000, guid: 74f3421db4d075f4b840cbd955330770, type: 2}

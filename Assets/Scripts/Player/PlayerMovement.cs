@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] public float speed = 0.5f;
     [SerializeField] public float jumpForce = 6f;
+    [SerializeField] AudioSource playerAudio;
+    [SerializeField] AudioClip jumpAudio;
 
     private float movePlayerVector;
     private Rigidbody2D playerRigidBody2D;
@@ -72,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetTrigger("takeOff");
             playerRigidBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            playerAudio.PlayOneShot(jumpAudio);
         }
         else
         {

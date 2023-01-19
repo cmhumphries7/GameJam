@@ -4835,6 +4835,14 @@ PrefabInstance:
       value: 0.945704
       objectReference: {fileID: 0}
     - target: {fileID: 1453743737210196794, guid: a5950bafc74883844b5b4f7943ac5d36, type: 3}
+      propertyPath: jumpAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: dde92d049e4b1f8439f91503d17bfe1d, type: 3}
+    - target: {fileID: 1453743737210196794, guid: a5950bafc74883844b5b4f7943ac5d36, type: 3}
+      propertyPath: playerAudio
+      value: 
+      objectReference: {fileID: 1743213841}
+    - target: {fileID: 1453743737210196794, guid: a5950bafc74883844b5b4f7943ac5d36, type: 3}
       propertyPath: movementLocked
       value: 0
       objectReference: {fileID: 0}

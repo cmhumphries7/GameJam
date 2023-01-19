@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Death1
   m_EditorClassIdentifier: 
   dialogue:
-  - Krrraghhhh
+  - Krrraghhhh...
   responses:
-  - responseText: Death, we finally meet.
+  - responseText: Death. Finally, we meet.
     dialogueObject: {fileID: 11400000, guid: ff96f44614fdb8f439c1b81a4b33e227, type: 2}

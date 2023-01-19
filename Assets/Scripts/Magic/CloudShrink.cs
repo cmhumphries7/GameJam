@@ -11,6 +11,8 @@ public class CloudShrink : MonoBehaviour
     [SerializeField] public GameObject darknessCircle;
     [SerializeField] float phaseTimer = 0f;
     [SerializeField] AudioClip drainAudio;
+    [SerializeField] DialogueUI dialogue;
+    [SerializeField] DialogueObject[] dialogueObjects;
     float timeToNextPhase = 3f;
     bool phaseOneComplete = false;
     bool phaseTwoComplete = false;
@@ -18,6 +20,7 @@ public class CloudShrink : MonoBehaviour
     bool phaseComplete;
     private Vector3 scaleChange, positionChange;
     private LifeMagic lifeMagic;
+    private PlayerMovement movement;
     public PlayerLife playerLife;
     private Vector3 startingSize;
     private Vector3 darknessCircleSize;
@@ -52,6 +55,7 @@ public class CloudShrink : MonoBehaviour
     {
 
         lifeMagic = collision.gameObject.GetComponent<LifeMagic>();
+        movement = collision.gameObject.GetComponent<PlayerMovement>();
         lifeMagic.drainAudio = drainAudio;
         if (cloudHealth <= 0)
         {
@@ -96,6 +100,9 @@ public class CloudShrink : MonoBehaviour
         if (phaseTimer > timeToNextPhase && !phaseOneComplete)
         {
             phaseComplete = true;
+            movement.LockMovement(true);
+            lifeMagic.LockMagic(true);
+            dialogue.ShowDialogue(dialogueObjects[0]);
             ResetTimer();
             phaseOneComplete = true;
             ShrinkCloud(100);
@@ -127,6 +134,9 @@ public class CloudShrink : MonoBehaviour
         if (phaseTimer > timeToNextPhase && !phaseTwoComplete)
         {
             phaseComplete = true;
+            movement.LockMovement(true);
+            lifeMagic.LockMagic(true);
+            dialogue.ShowDialogue(dialogueObjects[1]);
             ResetTimer();
             phaseTwoComplete = true;
             ShrinkCloud(50);

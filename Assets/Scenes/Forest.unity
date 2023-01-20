@@ -298,6 +298,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
+      propertyPath: audioTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
+      propertyPath: talkingAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: ab8ce34fa3ff9904689570a4b0b8d451, type: 3}
+    - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
       propertyPath: dialogueObject
       value: 
       objectReference: {fileID: 11400000, guid: f7dbcaa0984786a488850ff6164771ff, type: 2}
@@ -1712,6 +1720,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
+      propertyPath: audioTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
+      propertyPath: talkingAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 04e8097045028174c8cc81047044998b, type: 3}
+    - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
       propertyPath: dialogueObject
       value: 
       objectReference: {fileID: 11400000, guid: 5ba04d9db8df63b4fa08401963410402, type: 2}
@@ -2274,6 +2290,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
+      propertyPath: audioTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
+      propertyPath: talkingAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 7667deaace961504ab84e89c6e32b302, type: 3}
     - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
       propertyPath: dialogueObject
       value: 
@@ -4676,6 +4700,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
+      propertyPath: audioTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
+      propertyPath: talkingAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 43b1cbc68b9cf7c4895cd162b250e451, type: 3}
     - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
       propertyPath: dialogueObject
       value: 
@@ -8043,6 +8075,14 @@ PrefabInstance:
       propertyPath: timeline
       value: 
       objectReference: {fileID: 1769489529}
+    - target: {fileID: 1325248902105935418, guid: f050ec12e226fc444a9e0ea217297a70, type: 3}
+      propertyPath: audioTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325248902105935418, guid: f050ec12e226fc444a9e0ea217297a70, type: 3}
+      propertyPath: talkingAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 7667deaace961504ab84e89c6e32b302, type: 3}
     - target: {fileID: 1325248902105935419, guid: f050ec12e226fc444a9e0ea217297a70, type: 3}
       propertyPath: m_Name
       value: CutsceneTrigger

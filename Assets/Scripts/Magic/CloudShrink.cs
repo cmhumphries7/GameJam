@@ -13,6 +13,8 @@ public class CloudShrink : MonoBehaviour
     [SerializeField] AudioClip drainAudio;
     [SerializeField] DialogueUI dialogue;
     [SerializeField] DialogueObject[] dialogueObjects;
+    [SerializeField] AudioSource cloudSounds;
+    [SerializeField] AudioClip thunder;
     float timeToNextPhase = 3f;
     bool phaseOneComplete = false;
     bool phaseTwoComplete = false;
@@ -102,6 +104,7 @@ public class CloudShrink : MonoBehaviour
             phaseComplete = true;
             movement.LockMovement(true);
             lifeMagic.LockMagic(true);
+            cloudSounds.PlayOneShot(thunder);
             dialogue.ShowDialogue(dialogueObjects[0]);
             ResetTimer();
             phaseOneComplete = true;
@@ -136,6 +139,7 @@ public class CloudShrink : MonoBehaviour
             phaseComplete = true;
             movement.LockMovement(true);
             lifeMagic.LockMagic(true);
+            cloudSounds.PlayOneShot(thunder);
             dialogue.ShowDialogue(dialogueObjects[1]);
             ResetTimer();
             phaseTwoComplete = true;
@@ -156,6 +160,7 @@ public class CloudShrink : MonoBehaviour
         }
         if (cloudHealth <= 30)
         {
+            cloudSounds.PlayOneShot(thunder);
             phaseThreeComplete = true;
             cloudHealth = 0;
             Destroy(gameObject);

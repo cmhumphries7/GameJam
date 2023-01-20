@@ -1336,15 +1336,15 @@ MonoBehaviour:
   growPlantHealth: 0
   growCost: 20
   glowLight: {fileID: 0}
-  drainRate: 5
+  drainRate: 2
   timeToGrow: 2
-  growClip: {fileID: 0}
+  growClip: {fileID: 8300000, guid: a8b76179bd0df2043aa2c342c5624a98, type: 3}
   drainClip: {fileID: 0}
   playerLife: {fileID: 0}
   vine: {fileID: 0}
   toScale: {x: 430.01, y: 0.3, z: 1}
   tutorialPrompt: {fileID: 0}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1743213841}
 --- !u!1 &510667403
 GameObject:
   m_ObjectHideFlags: 0
@@ -6313,6 +6313,14 @@ PrefabInstance:
       propertyPath: timeline
       value: 
       objectReference: {fileID: 562325925}
+    - target: {fileID: 1325248902105935418, guid: f050ec12e226fc444a9e0ea217297a70, type: 3}
+      propertyPath: audioTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325248902105935418, guid: f050ec12e226fc444a9e0ea217297a70, type: 3}
+      propertyPath: talkingAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 8566549cf8df9db46bf3e828456f5c40, type: 3}
     - target: {fileID: 1325248902105935419, guid: f050ec12e226fc444a9e0ea217297a70, type: 3}
       propertyPath: m_Name
       value: CutsceneTrigger
@@ -7281,6 +7289,14 @@ PrefabInstance:
     - target: {fileID: 923606720654914070, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
+      propertyPath: audioTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
+      propertyPath: talkingAudio
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8406151838970279438, guid: aa94bdc4099d13e4e9b149626ff8c42e, type: 3}
       propertyPath: dialogueObject

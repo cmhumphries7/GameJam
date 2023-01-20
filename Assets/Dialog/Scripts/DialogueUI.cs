@@ -17,6 +17,8 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] LifeMagic playerMagic;
     [SerializeField] AudioSource dialogueAudio;
     [SerializeField] AudioClip dialogueClip;
+    public AudioClip talkingAudio;
+    public float audioTime;
 
 
     private void Start()
@@ -48,10 +50,17 @@ public class DialogueUI : MonoBehaviour
         for (int i = 0; i < dialogueObject.Dialogue.Length; i++)
         {
             string dialogue = dialogueObject.Dialogue[i];
+            if (talkingAudio != null)
+            {
+                dialogueAudio.time = audioTime;
+                dialogueAudio.clip = talkingAudio;
+                dialogueAudio.Play();
+            }
 
             yield return RunTypingEffect(dialogue);
 
             textLabel.text = dialogue;
+
             
             if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
 
@@ -83,6 +92,9 @@ public class DialogueUI : MonoBehaviour
                 typerwriterEffect.Stop();
             }
         }
+        //dialogueAudio.time = 0;
+        //dialogueAudio.clip = null;
+        dialogueAudio.Stop();
 
     } 
 
